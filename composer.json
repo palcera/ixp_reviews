@@ -12,25 +12,86 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
         "composer/installers": "^2.3",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/address": "^2.0",
+        "drupal/admin_toolbar": "^3.4",
+        "drupal/allowed_formats": "^3.0",
+        "drupal/bootstrap5": "^4.0",
+        "drupal/bootstrap_layout_builder": "^2.2",
+        "drupal/bpmn_io": "^2.0",
+        "drupal/config_overlay": "^2.3",
+        "drupal/config_split": "^2.0",
         "drupal/core-composer-scaffold": "^11.1",
-        "drupal/core-recommended": "^11.1"
+        "drupal/core-recommended": "^11.1",
+        "drupal/custom_field": "^3.0",
+        "drupal/devel": "^5.1",
+        "drupal/dropdown_language": "^4.0",
+        "drupal/easy_breadcrumb": "^2.0",
+        "drupal/editor_advanced_link": "^2.2",
+        "drupal/editoria11y": "^2.1",
+        "drupal/entity_browser": "^2.9",
+        "drupal/entity_usage": "^2.0@beta",
+        "drupal/field_group": "^3.4",
+        "drupal/focal_point": "^2.0",
+        "drupal/gin": "^3.0@rc",
+        "drupal/gin_toolbar": "^1.0@rc",
+        "drupal/google_tag": "^2.0",
+        "drupal/group": "^3.3",
+        "drupal/http_cache_control": "^2.1",
+        "drupal/inline_entity_form": "^3.0@RC",
+        "drupal/layout_builder_blocks": "^1.1",
+        "drupal/link_attributes": "^2.1",
+        "drupal/linkit": "^7.0@alpha",
+        "drupal/login_redirect_per_role": "^1.10",
+        "drupal/mailsystem": "^4.5",
+        "drupal/manage_display": "3.x-dev@dev",
+        "drupal/markdown_easy": "^1.0",
+        "drupal/metatag": "^2.0",
+        "drupal/moderation_dashboard": "^3.1",
+        "drupal/moderation_sidebar": "^1.7",
+        "drupal/pathauto": "^1.11",
+        "drupal/phpmailer_smtp": "^2.2",
+        "drupal/profile": "^1.11",
+        "drupal/radix": "~6",
+        "drupal/redirect": "^1.9",
+        "drupal/redirect_404": "^1.9",
+        "drupal/robotstxt": "^1.6",
+        "drupal/schema_metatag": "^3.0",
+        "drupal/search404": "^2.2@RC",
+        "drupal/seckit": "^2.0",
+        "drupal/security_review": "^3",
+        "drupal/seo_checklist": "^5.2",
+        "drupal/simple_sitemap": "^4.1",
+        "drupal/sitemap": "^2.0",
+        "drupal/smart_date": "^4.2",
+        "drupal/stage_file_proxy": "^3.1",
+        "drupal/upgrade_status": "^4.3",
+        "drupal/user_current_paths": "^2.0",
+        "drush/drush": "^13",
+        "oomphinc/composer-installers-extender": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
-            "phpstan/extension-installer": true,
+            "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "drupal/core-composer-scaffold": true,
+            "oomphinc/composer-installers-extender": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
         },
         "sort-packages": true
     },
@@ -38,6 +99,10 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            },
+            "file-mapping": {
+                "[web-root]/sites/default/default.settings.php": false,
+                "[web-root]/.htaccess": false
             }
         },
         "installer-paths": {
@@ -45,7 +110,9 @@
                 "type:drupal-core"
             ],
             "web/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library",
+                "bower-asset",
+                "npm-asset"
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -72,11 +139,17 @@
                 "type:drupal-recipe"
             ]
         },
-        "drupal-core-project-message": {
-            "include-keys": [
-                "homepage",
-                "support"
-            ]
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "patches": {
+            "drupal/dxpr_theme": {
+                "Issue 3490492: Drupal 11 compatibility: Bootstrap5 theme version": "https://git.drupalcode.org/project/dxpr_theme/-/merge_requests/4.patch"
+            }
         }
     }
 }
