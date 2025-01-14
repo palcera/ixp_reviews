@@ -1,0 +1,34 @@
+uuid: e082e3c1-a9a3-4126-90e4-af250ded5d28
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ixp_engagement
+    - workflows.workflow.ixp_approval_process
+  module:
+    - comment
+    - contact
+    - content_moderation
+    - group
+    - node
+    - system
+id: company_admin
+label: 'Company Admin'
+weight: 4
+is_admin: null
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access group overview'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'create company group'
+  - 'create ixp_engagement content'
+  - 'delete own ixp_engagement content'
+  - 'edit own comments'
+  - 'edit own ixp_engagement content'
+  - 'post comments'
+  - 'use ixp_approval_process transition create_new_draft'
+  - 'use ixp_approval_process transition publish'
+  - 'use ixp_approval_process transition ready_to_review'
+  - 'view own unpublished content'
