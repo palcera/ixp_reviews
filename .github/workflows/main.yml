@@ -25,6 +25,8 @@ jobs:
       # Create deploy folder and clone the target repository
       - name: Clone IXP Deploy Repository
         run: |
+          pwd
+          ls -la
           mkdir deploy
           cd deploy
           git clone https://${{ secrets.DEPLOY_REPO_PAT }}@github.com/palcera/ixp_deploy.git .
