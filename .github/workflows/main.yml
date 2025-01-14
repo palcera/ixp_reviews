@@ -38,23 +38,23 @@ jobs:
       - name: Copy modules/custom and themes/custom
         run: |
           echo "Copying modules/custom and themes/custom..."
-          rm -rf deploy/web/modules/custom
+          rm -rf deploy/web/modules/custom || true
           cp -r web/modules/custom deploy/web/modules/custom
-          rm -rf deploy/web/themes/custom
+          rm -rf deploy/web/themes/custom || true
           cp -r web/themes/custom deploy/web/themes/custom
 
       # Copy drush folder
       - name: Copy drush folder
         run: |
           echo "Copying drush folder..."
-          rm -rf deploy/drush
+          rm -rf deploy/drush || true
           cp -r drush deploy/drush
 
       # Copy sync folder
       - name: Copy sync folder
         run: |
           echo "Copying sync folder..."
-          rm -rf deploy/config/sync
+          rm -rf deploy/config/sync || true
           mkdir -p deploy/config
           cp -r config/sync deploy/config/sync
 
@@ -62,7 +62,7 @@ jobs:
       - name: Copy envs folder
         run: |
           echo "Copying envs folder..."
-          rm -rf deploy/config/envs
+          rm -rf deploy/config/envs || true
           cp -r config/envs deploy/config/envs
 
       # Update settings.php
@@ -75,7 +75,7 @@ jobs:
       - name: Copy patches folder
         run: |
           echo "Copying patches folder..."
-          rm -rf deploy/patches
+          rm -rf deploy/patches || true
           cp -r patches deploy/patches
 
       # Run composer install
