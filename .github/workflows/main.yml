@@ -1,0 +1,94 @@
+name: Deploy to IXP Deploy Repo
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the current repository
+      - name: Checkout current repository
+        uses: actions/checkout@v3
+
+      # Setup Git
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      # Create deploy folder and clone the target repository
+      - name: Clone IXP Deploy Repository
+        run: |
+          mkdir deploy
+          cd deploy
+          git clone git@github.com:palcera/ixp_deploy.git .
+
+      # Copy composer.json and composer.lock
+      - name: Copy composer.json and composer.lock
+        run: |
+          echo "Copying composer.json and composer.lock..."
+          cp composer.json deploy/composer.json
+          cp composer.lock deploy/composer.lock
+
+      # Copy modules/custom and themes/custom
+      - name: Copy modules/custom and themes/custom
+        run: |
+          echo "Copying modules/custom and themes/custom..."
+          rm -rf deploy/web/modules/custom
+          cp -r web/modules/custom deploy/web/modules/custom
+          rm -rf deploy/web/themes/custom
+          cp -r web/themes/custom deploy/web/themes/custom
+
+      # Copy drush folder
+      - name: Copy drush folder
+        run: |
+          echo "Copying drush folder..."
+          rm -rf deploy/drush
+          cp -r drush deploy/drush
+
+      # Copy sync folder
+      - name: Copy sync folder
+        run: |
+          echo "Copying sync folder..."
+          rm -rf deploy/config/sync
+          mkdir -p deploy/config
+          cp -r config/sync deploy/config/sync
+
+      # Copy envs folder
+      - name: Copy envs folder
+        run: |
+          echo "Copying envs folder..."
+          rm -rf deploy/config/envs
+          cp -r config/envs deploy/config/envs
+
+      # Update settings.php
+      - name: Update settings.php
+        run: |
+          echo "Updating settings.php..."
+          cp web/sites/default/settings.php deploy/web/sites/default/settings.php
+
+      # Copy patches folder
+      - name: Copy patches folder
+        run: |
+          echo "Copying patches folder..."
+          rm -rf deploy/patches
+          cp -r patches deploy/patches
+
+      # Run composer install
+      - name: Run Composer Install
+        run: |
+          echo "Running composer install..."
+          composer install --working-dir=deploy
+
+      # Commit and push changes to the deploy repository
+      - name: Commit and Push Changes
+        run: |
+          echo "Committing and pushing changes..."
+          cd deploy
+          git add .
+          git commit -m "Automated deploy update for tag $GITHUB_REF_NAME"
+          git push origin main
