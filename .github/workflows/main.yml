@@ -6,7 +6,7 @@ on:
       - '*'
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,23 +38,23 @@ jobs:
       - name: Copy modules/custom and themes/custom
         run: |
           echo "Copying modules/custom and themes/custom..."
-          rm -rf deploy/web/modules/custom || true
+          [ -d deploy/web/modules/custom ] && rm -rf deploy/web/modules/custom
           cp -r web/modules/custom deploy/web/modules/custom
-          rm -rf deploy/web/themes/custom || true
+          [ -d deploy/web/themes/custom ] && rm -rf deploy/web/themes/custom
           cp -r web/themes/custom deploy/web/themes/custom
 
       # Copy drush folder
       - name: Copy drush folder
         run: |
           echo "Copying drush folder..."
-          rm -rf deploy/drush || true
+          [ -d deploy/drush ] && rm -rf deploy/drush
           cp -r drush deploy/drush
 
       # Copy sync folder
       - name: Copy sync folder
         run: |
           echo "Copying sync folder..."
-          rm -rf deploy/config/sync || true
+          [ -d deploy/config/sync ] && rm -rf deploy/config/sync
           mkdir -p deploy/config
           cp -r config/sync deploy/config/sync
 
@@ -62,7 +62,7 @@ jobs:
       - name: Copy envs folder
         run: |
           echo "Copying envs folder..."
-          rm -rf deploy/config/envs || true
+          [ -d deploy/config/envs ] && rm -rf deploy/config/envs
           cp -r config/envs deploy/config/envs
 
       # Update settings.php
@@ -75,7 +75,7 @@ jobs:
       - name: Copy patches folder
         run: |
           echo "Copying patches folder..."
-          rm -rf deploy/patches || true
+          [ -d deploy/patches ] && rm -rf deploy/patches
           cp -r patches deploy/patches
 
       # Run composer install
