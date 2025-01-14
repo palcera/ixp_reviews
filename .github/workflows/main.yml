@@ -25,7 +25,7 @@ jobs:
         run: |
           mkdir deploy
           cd deploy
-          git clone git@github.com:palcera/ixp_deploy.git .
+          git clone https://${{ secrets.DEPLOY_REPO_PAT }}@github.com/palcera/ixp_deploy.git .
 
       # Copy composer.json and composer.lock
       - name: Copy composer.json and composer.lock
@@ -91,4 +91,4 @@ jobs:
           cd deploy
           git add .
           git commit -m "Automated deploy update for tag $GITHUB_REF_NAME"
-          git push origin main
+          git push https://${{ secrets.DEPLOY_REPO_PAT }}@github.com/palcera/ixp_deploy.git main
