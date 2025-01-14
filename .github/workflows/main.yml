@@ -6,7 +6,7 @@ on:
       - '*'
 
 jobs:
-  build:
+  prepare-artifact:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,21 +34,24 @@ jobs:
           cp composer.json deploy/composer.json
           cp composer.lock deploy/composer.lock
 
+
+      # Run composer install
+      - name: Run Composer Install
+        run: |
+          echo "Running composer install..."
+          composer install --working-dir=deploy
+
+  copy-source-files:
+    runs-on: ubuntu-latest
+    needs: prepare-artifact
+
+    steps:
       # Copy modules/custom and themes/custom
       - name: Copy modules/custom and themes/custom
         run: |
           echo "Copying modules/custom and themes/custom..."
-            # [ -d deploy/web/modules/custom ] && rm -rf deploy/web/modules/custom
-            # cp -r web/modules/custom deploy/web/modules/custom
           [ -d deploy/web/themes/custom ] && rm -rf deploy/web/themes/custom
           cp -r web/themes/custom deploy/web/themes
-
-      # Copy drush folder
-      # - name: Copy drush folder
-      #   run: |
-      #     echo "Copying drush folder..."
-      #     [ -d deploy/drush ] && rm -rf deploy/drush
-      #     cp -r drush deploy/drush
 
       # Copy sync folder
       - name: Copy sync folder
@@ -58,39 +61,14 @@ jobs:
           [ -d deploy/config/sync ] && rm -rf deploy/config/sync
           cp -r config/sync deploy/config/sync
 
-      # Copy envs folder
-      # - name: Copy envs folder
-      #   run: |
-      #     echo "Copying envs folder..."
-      #     [ -d deploy/config/envs ] && rm -rf deploy/config/envs
-      #     cp -r config/envs deploy/config/envs
-
       # Update settings.php
       - name: Update settings.php
         run: |
           cp web/sites/default/settings.php deploy/web/sites/default/settings.php
 
-      # Copy patches folder
-      # - name: Copy patches folder
-      #   run: |
-      #     echo "Copying patches folder..."
-      #     [ -d deploy/patches ] && rm -rf deploy/patches
-      #     cp -r patches deploy/patches
-
-  install:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      # Run composer install
-      - name: Run Composer Install
-        run: |
-          echo "Running composer install..."
-          composer install --working-dir=deploy
-
   deploy:
     runs-on: ubuntu-latest
-    needs: install
+    needs: copy-source-files
 
     steps:
       # Commit and push changes to the deploy repository
