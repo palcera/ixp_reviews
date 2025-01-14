@@ -1,0 +1,23 @@
+uuid: 806f8179-5b91-4396-a5c5-f9dc585ff8b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.company
+    - user.role.authenticated
+id: company-outsider
+label: Outsider
+weight: -101
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: company
+permissions:
+  - 'create group_node:progress_report entity'
+  - 'join group'
+  - 'update own group_node:progress_report entity'
+  - 'view group'
+  - 'view group_node:ixp_engagement entity'
+  - 'view group_node:progress_report entity'
+  - 'view unpublished group_node:ixp_engagement entity'
+  - 'view unpublished group_node:progress_report entity'

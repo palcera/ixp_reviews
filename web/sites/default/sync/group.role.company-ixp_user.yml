@@ -1,0 +1,31 @@
+uuid: d0da4982-1a09-46c3-8d74-3f51fdb77aae
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.company
+    - user.role.ixp_user
+id: company-ixp_user
+label: 'IXP User'
+weight: 103
+admin: false
+scope: insider
+global_role: ixp_user
+group_type: company
+permissions:
+  - 'access group_node overview'
+  - 'create group_node:final_report_ixp entity'
+  - 'create group_node:progress_report entity'
+  - 'delete own group_node:final_report_ixp entity'
+  - 'delete own group_node:final_report_ixp relationship'
+  - 'delete own group_node:progress_report entity'
+  - 'update own group_node:final_report_ixp entity'
+  - 'update own group_node:progress_report entity'
+  - 'update own group_node:progress_report relationship'
+  - 'view group'
+  - 'view group_membership relationship'
+  - 'view group_node:final_report_ixp entity'
+  - 'view group_node:progress_report entity'
+  - 'view own unpublished group_node:final_report_ixp entity'
+  - 'view own unpublished group_node:ixp_engagement entity'
+  - 'view own unpublished group_node:progress_report entity'
