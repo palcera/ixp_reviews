@@ -13,6 +13,8 @@ jobs:
       # Checkout the current repository
       - name: Checkout current repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
 
       # Setup Git
       - name: Setup Git
@@ -33,7 +35,6 @@ jobs:
           echo "Copying composer.json and composer.lock..."
           cp composer.json deploy/composer.json
           cp composer.lock deploy/composer.lock
-
 
       # Run composer install
       - name: Run Composer Install
