@@ -25,17 +25,12 @@ jobs:
       # Create deploy folder and clone the target repository
       - name: Clone IXP Deploy Repository
         run: |
-          pwd
-          ls -la
           mkdir deploy
-          cd deploy
-          git clone https://${{ secrets.DEPLOY_REPO_PAT }}@github.com/palcera/ixp_deploy.git .
+          git clone https://${{ secrets.DEPLOY_REPO_PAT }}@github.com/palcera/ixp_deploy.git deploy
 
       # Copy composer.json and composer.lock
       - name: Copy composer.json and composer.lock
         run: |
-          pwd
-          ls -la
           echo "Copying composer.json and composer.lock..."
           cp composer.json deploy/composer.json
           cp composer.lock deploy/composer.lock
@@ -70,9 +65,9 @@ jobs:
       - name: Commit and Push Changes
         run: |
           echo "Committing and pushing changes..."
-          pwd
-          ls -la
           cd deploy
+          #Temporary fix for the dev version of manage_display
+          rm -rf web/modules/contrib/manage_display/.git
           git add .
           git commit -m "Automated deploy update for tag $GITHUB_REF_NAME"
           git push https://${{ secrets.DEPLOY_REPO_PAT }}@github.com/palcera/ixp_deploy.git main
