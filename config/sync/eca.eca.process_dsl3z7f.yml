@@ -1,0 +1,43 @@
+uuid: f1be1def-d702-4741-95a1-2450a66da996
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ixp_engagement.field_end_date
+    - field.storage.node.field_end_date
+    - node.type.ixp_engagement
+  module:
+    - eca_content
+    - eca_workflow
+id: process_dsl3z7f
+modeller: bpmn_io
+label: 'Set end date'
+version: ''
+weight: 0
+events:
+  Event_1g2n4eu:
+    plugin: 'workflow:transition'
+    label: 'Set final state'
+    configuration:
+      type: 'node ixp_engagement'
+      from_state: published
+      to_state: final_review
+    successors:
+      -
+        id: Activity_09txn15
+        condition: ''
+conditions: {  }
+gateways: {  }
+actions:
+  Activity_09txn15:
+    plugin: eca_set_field_value
+    label: 'Set end date to current date'
+    configuration:
+      field_name: field_end_date
+      field_value: '[current-date:html_date]'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: true
+      object: node
+    successors: {  }

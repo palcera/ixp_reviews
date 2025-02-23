@@ -1,16 +1,16 @@
-uuid: f97c20d2-3bab-43b5-b8ab-862b54ec7b7b
+uuid: 37e981b1-c510-49e8-9f74-6f31aa07deca
 langcode: en
 status: true
 dependencies:
   module:
     - search
   theme:
-    - radix
+    - olivero
 _core:
   default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
-id: radix_search_form_wide
-theme: radix
-region: navbar_branding
+id: olivero_search_form_wide
+theme: olivero
+region: secondary_menu
 weight: -5
 provider: null
 plugin: search_form_block
