@@ -236,6 +236,7 @@ actions:
       operation: subtraction
       flip: false
       value: '[engagement_start_date]'
+      skip_on_nan: false
       eca_data: '[engagement_end_date]'
       eca_token_name: date_difference
     successors:
@@ -249,6 +250,7 @@ actions:
       operation: division
       flip: false
       value: '1209600'
+      skip_on_nan: false
       eca_data: '[date_difference]'
       eca_token_name: date_difference
     successors:
@@ -272,6 +274,7 @@ actions:
       operation: multiplication
       flip: false
       value: '2'
+      skip_on_nan: false
       eca_data: '[date_difference]'
       eca_token_name: progress_reports_needed
     successors:

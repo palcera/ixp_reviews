@@ -10,6 +10,7 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
+    - path
     - user
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
@@ -47,6 +48,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 5
     region: content
@@ -60,4 +67,5 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true

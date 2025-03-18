@@ -1,18 +1,16 @@
-uuid: 20e52fc1-4216-4e04-83a8-2b077f79f029
+uuid: de33aed7-07f5-44e1-beb3-dc1a6117bada
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.document.field_media_document
-    - media.type.document
+    - field.field.media.remote_video.field_media_oembed_video
+    - media.type.remote_video
   module:
-    - file
+    - media
     - path
-_core:
-  default_config_hash: aewrRkePgJzdD5kPOq8JeMcKHs6yat49nE7ZeCQzQZg
-id: media.document.default
+id: media.remote_video.default
 targetEntityType: media
-bundle: document
+bundle: remote_video
 mode: default
 content:
   created:
@@ -21,12 +19,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_media_document:
-    type: file_generic
+  field_media_oembed_video:
+    type: oembed_textfield
     weight: 0
     region: content
     settings:
-      progress_indicator: throbber
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

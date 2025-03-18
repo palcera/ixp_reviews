@@ -1,0 +1,35 @@
+uuid: 712b9cd2-c3c9-47bc-91f2-9c6b97ff8005
+langcode: en
+status: true
+dependencies:
+  config:
+    - eca.eca.process_u0bujv1
+id: process_u0bujv1
+label: noname
+tags:
+  - untagged
+documentation: ''
+filename: ''
+modeldata: |
+  <?xml version="1.0" encoding="UTF-8"?>
+  <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:qa="http://some-company/schema/bpmn/qa" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+    <bpmn2:process id="Process_u0bUJV1" isExecutable="true">
+      <bpmn2:startEvent id="Event_0adyxwf" camunda:modelerTemplate="org.drupal.event.eca_render:block">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_render:block" />
+          </camunda:properties>
+          <camunda:field name="block_name">
+            <camunda:string>Demo of ECA mdvip</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+      </bpmn2:startEvent>
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="sid-df866c67-e288-45d9-9dc0-1ca6b4cb5ba0">
+      <bpmndi:BPMNPlane id="sid-8ee3a99f-241c-4cd3-bc1f-e80d52164ec6" bpmnElement="Process_u0bUJV1">
+        <bpmndi:BPMNShape id="Event_1dfoqdq_di" bpmnElement="Event_0adyxwf">
+          <dc:Bounds x="182" y="272" width="36" height="36" />
+        </bpmndi:BPMNShape>
+      </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+  </bpmn2:definitions>

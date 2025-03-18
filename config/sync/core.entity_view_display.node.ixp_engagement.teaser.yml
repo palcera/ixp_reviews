@@ -36,4 +36,5 @@ hidden:
   field_mentor: true
   field_proposed_work: true
   field_start_date: true
+  langcode: true
   links: true

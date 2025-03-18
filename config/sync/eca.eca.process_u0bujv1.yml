@@ -1,0 +1,22 @@
+uuid: a3a64c24-ebc2-41f9-91d5-39bfc114cb9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - eca_render
+id: process_u0bujv1
+modeller: bpmn_io
+label: noname
+version: ''
+weight: null
+events:
+  Event_0adyxwf:
+    plugin: 'eca_render:block'
+    label: Event_0adyxwf
+    configuration:
+      block_name: 'Demo of ECA mdvip'
+      block_machine_name: demo_of_eca_mdvip
+    successors: {  }
+conditions: {  }
+gateways: {  }
+actions: {  }

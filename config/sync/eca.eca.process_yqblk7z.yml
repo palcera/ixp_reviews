@@ -66,6 +66,7 @@ actions:
       operation: addition
       flip: false
       value: '1'
+      skip_on_nan: false
       eca_data: '0[ixp-case-seq]'
       eca_token_name: '[ixp-case-seq]'
     successors:

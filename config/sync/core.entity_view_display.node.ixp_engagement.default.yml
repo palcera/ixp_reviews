@@ -797,3 +797,4 @@ content:
     region: content
 hidden:
   field_case_number: true
+  langcode: true

@@ -28,3 +28,4 @@ hidden:
   field_ixp_links: true
   field_mentor_available: true
   field_tasks_skills: true
+  langcode: true

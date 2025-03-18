@@ -24,9 +24,19 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   eca: 0
+  eca_access: 0
   eca_base: 0
+  eca_cache: 0
+  eca_config: 0
   eca_content: 0
+  eca_endpoint: 0
+  eca_file: 0
+  eca_language: 0
+  eca_log: 0
+  eca_migrate: 0
+  eca_misc: 0
   eca_modeller_bpmn: 0
+  eca_queue: 0
   eca_render: 0
   eca_tamper: 0
   eca_ui: 0
@@ -46,6 +56,7 @@ module:
   help: 0
   history: 0
   image: 0
+  language: 0
   layout_builder: 0
   layout_builder_blocks: 0
   layout_discovery: 0
@@ -55,6 +66,7 @@ module:
   media_library_form_element: 0
   menu_link_content: 0
   menu_ui: 0
+  migrate: 0
   moderation_dashboard: 0
   moderation_sidebar: 0
   mysql: 0
