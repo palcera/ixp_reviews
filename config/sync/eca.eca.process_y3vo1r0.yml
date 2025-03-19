@@ -18,7 +18,7 @@ dependencies:
 id: process_y3vo1r0
 modeller: bpmn_io
 label: 'Find if there are enough progress reports'
-version: 'v. 1.0'
+version: 'v. 1.1'
 weight: 0
 events:
   Event_1cqxfhq:
@@ -28,11 +28,8 @@ events:
       type: 'node ixp_engagement'
     successors:
       -
-        id: Activity_08l17h5
-        condition: Flow_1ytopfg
-      -
-        id: Activity_08l17h5
-        condition: Flow_0gekohk
+        id: Gateway_0if952o
+        condition: Flow_029jj87
 conditions:
   Flow_1ytopfg:
     plugin: eca_current_user_role
@@ -95,6 +92,14 @@ conditions:
       right: '[total_progress_reports]'
       operator: equal
       type: value
+  Flow_029jj87:
+    plugin: eca_content_form_display_mode
+    configuration:
+      negate: false
+      case: false
+      display_mode: default
+      operator: equal
+      type: value
 gateways:
   Gateway_0bv6177:
     type: 0
@@ -126,6 +131,15 @@ gateways:
       -
         id: Activity_0b3ilqp
         condition: Flow_0u3zbdt
+  Gateway_0if952o:
+    type: 0
+    successors:
+      -
+        id: Activity_08l17h5
+        condition: Flow_1ytopfg
+      -
+        id: Activity_08l17h5
+        condition: Flow_0gekohk
 actions:
   Activity_08l17h5:
     plugin: 'eca_render_views:views'

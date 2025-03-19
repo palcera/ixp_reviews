@@ -288,7 +288,7 @@ $settings['config_sync_directory'] = '../config/sync';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'Ja_-oJppBxBe4z4UX7eo3myvrU6fw4vsbbw5AzZrX5leX5ZkFrdA-YMC0CSiMVfA0JUuF1hItQ';
 
 /**
  * Deployment identifier.
@@ -860,6 +860,13 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev.php')) {
   include __DIR__ . '/settings.ddev.php';
 }
+
+
+#Load the database config for the hosting site
+if (file_exists($app_root . '/' . $site_path . '/settings.deploy.php')) {
+  include $app_root . '/' . $site_path . '/settings.deploy.php';
+}
+
 
 /**
  * Load local development override configuration, if available.

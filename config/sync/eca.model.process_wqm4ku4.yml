@@ -13,7 +13,7 @@ filename: ''
 modeldata: |
   <?xml version="1.0" encoding="UTF-8"?>
   <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:qa="http://some-company/schema/bpmn/qa" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
-    <bpmn2:process id="Process_wQM4Ku4" name="Are enought final reports" isExecutable="true">
+    <bpmn2:process id="Process_wQM4Ku4" name="Are enought final reports" isExecutable="true" camunda:versionTag="v1.0">
       <bpmn2:startEvent id="Event_1mxe92v" camunda:modelerTemplate="org.drupal.event.content_entity:view">
         <bpmn2:extensionElements>
           <camunda:properties>
@@ -23,9 +23,9 @@ modeldata: |
             <camunda:string>node ixp_engagement</camunda:string>
           </camunda:field>
         </bpmn2:extensionElements>
-        <bpmn2:outgoing>Flow_1kjsqdw</bpmn2:outgoing>
+        <bpmn2:outgoing>Flow_0scc20h</bpmn2:outgoing>
       </bpmn2:startEvent>
-      <bpmn2:sequenceFlow id="Flow_1kjsqdw" camunda:modelerTemplate="org.drupal.condition.eca_entity_field_value" sourceRef="Event_1mxe92v" targetRef="Activity_1dlsw2q">
+      <bpmn2:sequenceFlow id="Flow_1kjsqdw" name="Is it in Final Review?" camunda:modelerTemplate="org.drupal.condition.eca_entity_field_value" sourceRef="Gateway_15oqpys" targetRef="Activity_1dlsw2q">
         <bpmn2:extensionElements>
           <camunda:properties>
             <camunda:property name="pluginid" value="eca_entity_field_value" />
@@ -251,11 +251,38 @@ modeldata: |
           </camunda:field>
         </bpmn2:extensionElements>
       </bpmn2:sequenceFlow>
+      <bpmn2:exclusiveGateway id="Gateway_15oqpys">
+        <bpmn2:incoming>Flow_0scc20h</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_1kjsqdw</bpmn2:outgoing>
+      </bpmn2:exclusiveGateway>
+      <bpmn2:sequenceFlow id="Flow_0scc20h" name="Is it default view mode?" camunda:modelerTemplate="org.drupal.condition.eca_content_form_display_mode" sourceRef="Event_1mxe92v" targetRef="Gateway_15oqpys">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_content_form_display_mode" />
+          </camunda:properties>
+          <camunda:field name="operator">
+            <camunda:string>equal</camunda:string>
+          </camunda:field>
+          <camunda:field name="display_mode">
+            <camunda:string>default</camunda:string>
+          </camunda:field>
+          <camunda:field name="type">
+            <camunda:string>value</camunda:string>
+          </camunda:field>
+          <camunda:field name="case">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="negate">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+      </bpmn2:sequenceFlow>
     </bpmn2:process>
     <bpmndi:BPMNDiagram id="sid-a9490b3c-2684-4790-a2fb-6c72cec9aa15">
       <bpmndi:BPMNPlane id="sid-19893cba-d594-4788-8942-afaffac65960" bpmnElement="Process_wQM4Ku4">
-        <bpmndi:BPMNShape id="Event_1mxe92v_di" bpmnElement="Event_1mxe92v">
-          <dc:Bounds x="312" y="172" width="36" height="36" />
+        <bpmndi:BPMNShape id="Activity_1dlsw2q_di" bpmnElement="Activity_1dlsw2q">
+          <dc:Bounds x="390" y="150" width="100" height="80" />
+          <bpmndi:BPMNLabel />
         </bpmndi:BPMNShape>
         <bpmndi:BPMNShape id="Activity_0qvhgqn_di" bpmnElement="Activity_0qvhgqn">
           <dc:Bounds x="560" y="300" width="100" height="80" />
@@ -269,27 +296,32 @@ modeldata: |
           <dc:Bounds x="880" y="300" width="100" height="80" />
           <bpmndi:BPMNLabel />
         </bpmndi:BPMNShape>
-        <bpmndi:BPMNShape id="Activity_1dlsw2q_di" bpmnElement="Activity_1dlsw2q">
-          <dc:Bounds x="390" y="150" width="100" height="80" />
-          <bpmndi:BPMNLabel />
-        </bpmndi:BPMNShape>
         <bpmndi:BPMNShape id="Gateway_0mcb69b_di" bpmnElement="Gateway_0mcb69b" isMarkerVisible="true">
           <dc:Bounds x="1045" y="315" width="50" height="50" />
           <bpmndi:BPMNLabel>
             <dc:Bounds x="1104.5" y="326" width="85" height="27" />
           </bpmndi:BPMNLabel>
         </bpmndi:BPMNShape>
-        <bpmndi:BPMNShape id="Activity_1gt11ip_di" bpmnElement="Activity_1gt11ip">
-          <dc:Bounds x="1160" y="370" width="100" height="80" />
-          <bpmndi:BPMNLabel />
-        </bpmndi:BPMNShape>
         <bpmndi:BPMNShape id="Activity_1qeqexi_di" bpmnElement="Activity_1qeqexi">
           <dc:Bounds x="1160" y="230" width="100" height="80" />
           <bpmndi:BPMNLabel />
         </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_1gt11ip_di" bpmnElement="Activity_1gt11ip">
+          <dc:Bounds x="1160" y="370" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Event_1mxe92v_di" bpmnElement="Event_1mxe92v">
+          <dc:Bounds x="92" y="172" width="36" height="36" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Gateway_15oqpys_di" bpmnElement="Gateway_15oqpys" isMarkerVisible="true">
+          <dc:Bounds x="215" y="165" width="50" height="50" />
+        </bpmndi:BPMNShape>
         <bpmndi:BPMNEdge id="Flow_1kjsqdw_di" bpmnElement="Flow_1kjsqdw">
-          <di:waypoint x="348" y="190" />
+          <di:waypoint x="265" y="190" />
           <di:waypoint x="390" y="190" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="302" y="156" width="56" height="27" />
+          </bpmndi:BPMNLabel>
         </bpmndi:BPMNEdge>
         <bpmndi:BPMNEdge id="Flow_0ewvklm_di" bpmnElement="Flow_0ewvklm">
           <di:waypoint x="490" y="190" />
@@ -326,6 +358,13 @@ modeldata: |
           <di:waypoint x="1070" y="315" />
           <di:waypoint x="1070" y="270" />
           <di:waypoint x="1160" y="270" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0scc20h_di" bpmnElement="Flow_0scc20h">
+          <di:waypoint x="128" y="190" />
+          <di:waypoint x="215" y="190" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="134" y="172" width="79" height="27" />
+          </bpmndi:BPMNLabel>
         </bpmndi:BPMNEdge>
       </bpmndi:BPMNPlane>
     </bpmndi:BPMNDiagram>

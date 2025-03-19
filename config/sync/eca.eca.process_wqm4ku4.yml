@@ -13,7 +13,7 @@ dependencies:
 id: process_wqm4ku4
 modeller: bpmn_io
 label: 'Are enought final reports'
-version: ''
+version: v1.0
 weight: 0
 events:
   Event_1mxe92v:
@@ -23,8 +23,8 @@ events:
       type: 'node ixp_engagement'
     successors:
       -
-        id: Activity_1dlsw2q
-        condition: Flow_1kjsqdw
+        id: Gateway_15oqpys
+        condition: Flow_0scc20h
 conditions:
   Flow_1kjsqdw:
     plugin: eca_entity_field_value
@@ -63,6 +63,14 @@ conditions:
       right: '2'
       operator: greaterthan
       type: value
+  Flow_0scc20h:
+    plugin: eca_content_form_display_mode
+    configuration:
+      negate: false
+      case: false
+      display_mode: default
+      operator: equal
+      type: value
 gateways:
   Gateway_0mcb69b:
     type: 0
@@ -76,6 +84,12 @@ gateways:
       -
         id: Activity_1qeqexi
         condition: Flow_1a8rdip
+  Gateway_15oqpys:
+    type: 0
+    successors:
+      -
+        id: Activity_1dlsw2q
+        condition: Flow_1kjsqdw
 actions:
   Activity_1dlsw2q:
     plugin: 'eca_render_views:views'
