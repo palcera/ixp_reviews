@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_company_created
     - field.field.user.user.field_company_name
     - field.field.user.user.field_real_name
     - field.field.user.user.field_reason_to_join
@@ -32,7 +33,7 @@ content:
     third_party_settings: {  }
   field_company_name:
     type: string_textfield
-    weight: 32
+    weight: 8
     region: content
     settings:
       size: 60
@@ -66,7 +67,7 @@ content:
     third_party_settings: {  }
   field_reason_to_join:
     type: string_textfield
-    weight: 31
+    weight: 7
     region: content
     settings:
       size: 60
@@ -79,7 +80,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -97,5 +98,6 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  field_company_created: true
   field_role: true
   langcode: true

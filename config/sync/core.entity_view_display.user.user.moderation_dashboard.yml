@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.moderation_dashboard
+    - field.field.user.user.field_company_created
     - field.field.user.user.field_company_name
     - field.field.user.user.field_real_name
     - field.field.user.user.field_reason_to_join
@@ -164,6 +165,7 @@ bundle: user
 mode: moderation_dashboard
 content: {  }
 hidden:
+  field_company_created: true
   field_company_name: true
   field_real_name: true
   field_reason_to_join: true

@@ -14,7 +14,7 @@ _core:
 id: eca_lib_0029
 modeller: bpmn_io
 label: 'Add role to inserted or updated user'
-version: v2
+version: v3
 weight: 0
 events:
   Event_15fsmqd:

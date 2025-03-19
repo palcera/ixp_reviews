@@ -1,0 +1,256 @@
+uuid: e2e90379-8005-4875-a001-dd0fc048c016
+langcode: en
+status: true
+dependencies:
+  config:
+    - eca.eca.process_cq6prln
+id: process_cq6prln
+label: 'Add company when it does not exist'
+tags:
+  - ''
+documentation: ''
+filename: ''
+modeldata: |
+  <?xml version="1.0" encoding="UTF-8"?>
+  <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:qa="http://some-company/schema/bpmn/qa" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+    <bpmn2:process id="Process_cq6pRLn" name="Add company when it does not exist" isExecutable="true" camunda:versionTag="v0.1">
+      <bpmn2:extensionElements>
+        <camunda:properties>
+          <camunda:property />
+        </camunda:properties>
+      </bpmn2:extensionElements>
+      <bpmn2:startEvent id="Event_1jzlu2x" name="User created" camunda:modelerTemplate="org.drupal.event.content_entity:insert">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="content_entity:insert" />
+          </camunda:properties>
+          <camunda:field name="type">
+            <camunda:string>user user</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_1q3ndwp</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:exclusiveGateway id="Gateway_1m0dmnm">
+        <bpmn2:incoming>Flow_1q3ndwp</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_0edwh7v</bpmn2:outgoing>
+      </bpmn2:exclusiveGateway>
+      <bpmn2:sequenceFlow id="Flow_0edwh7v" name="Company not created" camunda:modelerTemplate="org.drupal.condition.eca_entity_field_value" sourceRef="Gateway_1m0dmnm" targetRef="Activity_15fktf7">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_entity_field_value" />
+          </camunda:properties>
+          <camunda:field name="field_name">
+            <camunda:string>field_company_created</camunda:string>
+          </camunda:field>
+          <camunda:field name="operator">
+            <camunda:string>equal</camunda:string>
+          </camunda:field>
+          <camunda:field name="expected_value">
+            <camunda:string>0</camunda:string>
+          </camunda:field>
+          <camunda:field name="type">
+            <camunda:string>value</camunda:string>
+          </camunda:field>
+          <camunda:field name="case">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="negate">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="entity">
+            <camunda:string>entity</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+      </bpmn2:sequenceFlow>
+      <bpmn2:task id="Activity_18wic5x" name="Create Company" camunda:modelerTemplate="org.drupal.action.eca_new_entity">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_new_entity" />
+          </camunda:properties>
+          <camunda:field name="token_name">
+            <camunda:string>company</camunda:string>
+          </camunda:field>
+          <camunda:field name="type">
+            <camunda:string>group company</camunda:string>
+          </camunda:field>
+          <camunda:field name="langcode">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="label">
+            <camunda:string>[entity:field_company_name:value]</camunda:string>
+          </camunda:field>
+          <camunda:field name="published">
+            <camunda:string>yes</camunda:string>
+          </camunda:field>
+          <camunda:field name="owner">
+            <camunda:string>[entity:id]</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_05jqzxw</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_08dnd2q</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_1q3ndwp" name="Is it a Company Admin?" camunda:modelerTemplate="org.drupal.condition.eca_entity_field_value" sourceRef="Event_1jzlu2x" targetRef="Gateway_1m0dmnm">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_entity_field_value" />
+          </camunda:properties>
+          <camunda:field name="field_name">
+            <camunda:string>field_role</camunda:string>
+          </camunda:field>
+          <camunda:field name="operator">
+            <camunda:string>equal</camunda:string>
+          </camunda:field>
+          <camunda:field name="expected_value">
+            <camunda:string>company_admin</camunda:string>
+          </camunda:field>
+          <camunda:field name="type">
+            <camunda:string>value</camunda:string>
+          </camunda:field>
+          <camunda:field name="case">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="negate">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="entity">
+            <camunda:string>entity</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+      </bpmn2:sequenceFlow>
+      <bpmn2:task id="Activity_1jc8sns" name="Save Company" camunda:modelerTemplate="org.drupal.action.eca_save_entity">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_save_entity" />
+          </camunda:properties>
+          <camunda:field name="object">
+            <camunda:string>company</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_08dnd2q</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_0jrzrns</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_08dnd2q" sourceRef="Activity_18wic5x" targetRef="Activity_1jc8sns" />
+      <bpmn2:task id="Activity_15fktf7" name="Switch to user 1" camunda:modelerTemplate="org.drupal.action.eca_switch_account">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_switch_account" />
+          </camunda:properties>
+          <camunda:field name="user_id">
+            <camunda:string>1</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0edwh7v</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_05jqzxw</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_05jqzxw" sourceRef="Activity_15fktf7" targetRef="Activity_18wic5x" />
+      <bpmn2:task id="Activity_17rkhz5" name="Set company created to true" camunda:modelerTemplate="org.drupal.action.eca_set_field_value">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_set_field_value" />
+          </camunda:properties>
+          <camunda:field name="method">
+            <camunda:string>set:clear</camunda:string>
+          </camunda:field>
+          <camunda:field name="strip_tags">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="field_name">
+            <camunda:string>field_company_created</camunda:string>
+          </camunda:field>
+          <camunda:field name="trim">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="field_value">
+            <camunda:string>1</camunda:string>
+          </camunda:field>
+          <camunda:field name="save_entity">
+            <camunda:string>yes</camunda:string>
+          </camunda:field>
+          <camunda:field name="object">
+            <camunda:string>entity</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0jrzrns</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_15zq5er</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_0jrzrns" sourceRef="Activity_1jc8sns" targetRef="Activity_17rkhz5" />
+      <bpmn2:task id="Activity_1bxpj4l" name="Success Message" camunda:modelerTemplate="org.drupal.action.action_message_action">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="action_message_action" />
+          </camunda:properties>
+          <camunda:field name="message">
+            <camunda:string>Company [entity:field_company_name] Succesfully creted.</camunda:string>
+          </camunda:field>
+          <camunda:field name="replace_tokens">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_15zq5er</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_15zq5er" sourceRef="Activity_17rkhz5" targetRef="Activity_1bxpj4l" />
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="sid-cad89eea-327d-446e-b2cc-e9919eabe2e3">
+      <bpmndi:BPMNPlane id="sid-c63c3ca1-8e9d-40c0-8c38-011e314fdf3f" bpmnElement="Process_cq6pRLn">
+        <bpmndi:BPMNShape id="Event_1jzlu2x_di" bpmnElement="Event_1jzlu2x">
+          <dc:Bounds x="162" y="192" width="36" height="36" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="149" y="235" width="63" height="14" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Gateway_1m0dmnm_di" bpmnElement="Gateway_1m0dmnm" isMarkerVisible="true">
+          <dc:Bounds x="295" y="185" width="50" height="50" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_18wic5x_di" bpmnElement="Activity_18wic5x">
+          <dc:Bounds x="610" y="170" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_1jc8sns_di" bpmnElement="Activity_1jc8sns">
+          <dc:Bounds x="800" y="170" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_15fktf7_di" bpmnElement="Activity_15fktf7">
+          <dc:Bounds x="430" y="170" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_17rkhz5_di" bpmnElement="Activity_17rkhz5">
+          <dc:Bounds x="980" y="170" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_1bxpj4l_di" bpmnElement="Activity_1bxpj4l">
+          <dc:Bounds x="1190" y="170" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNEdge id="Flow_0edwh7v_di" bpmnElement="Flow_0edwh7v">
+          <di:waypoint x="345" y="210" />
+          <di:waypoint x="430" y="210" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="347" y="214" width="66" height="27" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_1q3ndwp_di" bpmnElement="Flow_1q3ndwp">
+          <di:waypoint x="198" y="210" />
+          <di:waypoint x="295" y="210" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="209" y="176" width="77" height="27" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_08dnd2q_di" bpmnElement="Flow_08dnd2q">
+          <di:waypoint x="710" y="210" />
+          <di:waypoint x="800" y="210" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_05jqzxw_di" bpmnElement="Flow_05jqzxw">
+          <di:waypoint x="530" y="210" />
+          <di:waypoint x="610" y="210" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0jrzrns_di" bpmnElement="Flow_0jrzrns">
+          <di:waypoint x="900" y="210" />
+          <di:waypoint x="980" y="210" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_15zq5er_di" bpmnElement="Flow_15zq5er">
+          <di:waypoint x="1080" y="210" />
+          <di:waypoint x="1190" y="210" />
+        </bpmndi:BPMNEdge>
+      </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+  </bpmn2:definitions>

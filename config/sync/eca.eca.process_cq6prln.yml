@@ -1,0 +1,108 @@
+uuid: 88983af7-eedb-4bae-b549-eff38e1d56d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.company
+  module:
+    - eca_content
+    - eca_user
+    - user
+id: process_cq6prln
+modeller: bpmn_io
+label: 'Add company when it does not exist'
+version: v0.1
+weight: 0
+events:
+  Event_1jzlu2x:
+    plugin: 'content_entity:insert'
+    label: 'User created'
+    configuration:
+      type: 'user user'
+    successors:
+      -
+        id: Gateway_1m0dmnm
+        condition: Flow_1q3ndwp
+conditions:
+  Flow_0edwh7v:
+    plugin: eca_entity_field_value
+    configuration:
+      negate: false
+      case: false
+      expected_value: '0'
+      field_name: field_company_created
+      operator: equal
+      type: value
+      entity: entity
+  Flow_1q3ndwp:
+    plugin: eca_entity_field_value
+    configuration:
+      negate: false
+      case: false
+      expected_value: company_admin
+      field_name: field_role
+      operator: equal
+      type: value
+      entity: entity
+gateways:
+  Gateway_1m0dmnm:
+    type: 0
+    successors:
+      -
+        id: Activity_15fktf7
+        condition: Flow_0edwh7v
+actions:
+  Activity_18wic5x:
+    plugin: eca_new_entity
+    label: 'Create Company'
+    configuration:
+      token_name: company
+      type: 'group company'
+      langcode: ''
+      label: '[entity:field_company_name:value]'
+      published: true
+      owner: '[entity:id]'
+    successors:
+      -
+        id: Activity_1jc8sns
+        condition: ''
+  Activity_1jc8sns:
+    plugin: eca_save_entity
+    label: 'Save Company'
+    configuration:
+      object: company
+    successors:
+      -
+        id: Activity_17rkhz5
+        condition: ''
+  Activity_15fktf7:
+    plugin: eca_switch_account
+    label: 'Switch to user 1'
+    configuration:
+      user_id: '1'
+    successors:
+      -
+        id: Activity_18wic5x
+        condition: ''
+  Activity_17rkhz5:
+    plugin: eca_set_field_value
+    label: 'Set company created to true'
+    configuration:
+      field_name: field_company_created
+      field_value: '1'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: true
+      object: entity
+    successors:
+      -
+        id: Activity_1bxpj4l
+        condition: ''
+  Activity_1bxpj4l:
+    plugin: action_message_action
+    label: 'Success Message'
+    configuration:
+      replace_tokens: false
+      message: 'Company [entity:field_company_name] Succesfully creted.'
+    successors: {  }

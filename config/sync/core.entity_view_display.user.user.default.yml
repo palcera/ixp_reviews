@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_company_created
     - field.field.user.user.field_company_name
     - field.field.user.user.field_real_name
     - field.field.user.user.field_reason_to_join
@@ -20,6 +21,16 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_company_created:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_company_name:
     type: string
     label: above
@@ -52,6 +63,8 @@ content:
     weight: 6
     region: content
   member_for:
+    settings: {  }
+    third_party_settings: {  }
     weight: 5
     region: content
   user_picture:

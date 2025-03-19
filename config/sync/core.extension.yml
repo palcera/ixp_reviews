@@ -53,6 +53,7 @@ module:
   flexible_permissions: 0
   gnode: 0
   group: 0
+  group_action: 0
   group_support_revisions: 0
   help: 0
   history: 0

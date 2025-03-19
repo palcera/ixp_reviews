@@ -1,0 +1,24 @@
+uuid: 749ef143-79a2-4562-9440-8ff94ff31239
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_company_created
+  module:
+    - user
+id: user.user.field_company_created
+field_name: field_company_created
+entity_type: user
+bundle: user
+label: 'Company Created'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
