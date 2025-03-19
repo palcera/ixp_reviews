@@ -1,0 +1,20 @@
+uuid: 1165c69f-c41d-4435-8bee-f414fa0b7162
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_company_name
+  module:
+    - user
+id: user.user.field_company_name
+field_name: field_company_name
+entity_type: user
+bundle: user
+label: 'Company Name'
+description: 'This will be the name of your company in the system. It will be created automatically'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
