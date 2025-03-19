@@ -57,6 +57,11 @@
 # Files and directories for common development environments, loosely inherited from BLT Project
 # @see https://github.com/acquia/blt-project/blob/11.x/.gitignore
 
+#SQL Dumps
+*.sql
+*.sql.gz
+
+
 # OS X
 .DS_Store
 .AppleDouble
