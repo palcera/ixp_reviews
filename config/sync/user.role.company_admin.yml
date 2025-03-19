@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - node.type.ixp_engagement
+    - node.type.job_posting
     - workflows.workflow.ixp_approval_process
+    - workflows.workflow.job_post_workflow
   module:
     - comment
     - contact
@@ -24,11 +26,15 @@ permissions:
   - 'access user profiles'
   - 'create company group'
   - 'create ixp_engagement content'
+  - 'create job_posting content'
   - 'delete own ixp_engagement content'
+  - 'delete own job_posting content'
   - 'edit own comments'
   - 'edit own ixp_engagement content'
+  - 'edit own job_posting content'
   - 'post comments'
   - 'use ixp_approval_process transition create_new_draft'
   - 'use ixp_approval_process transition publish'
   - 'use ixp_approval_process transition ready_to_review'
+  - 'use job_post_workflow transition create_new_draft'
   - 'view own unpublished content'

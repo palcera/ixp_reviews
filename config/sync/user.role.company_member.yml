@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.job_posting
     - workflows.workflow.ixp_approval_process
+    - workflows.workflow.job_post_workflow
   module:
     - content_moderation
     - group
@@ -15,7 +17,11 @@ is_admin: null
 permissions:
   - 'access group overview'
   - 'access user profiles'
+  - 'create job_posting content'
+  - 'delete own job_posting content'
+  - 'edit own job_posting content'
   - 'use ixp_approval_process transition create_new_draft'
   - 'use ixp_approval_process transition publish'
   - 'use ixp_approval_process transition ready_to_review'
+  - 'use job_post_workflow transition create_new_draft'
   - 'view own unpublished content'

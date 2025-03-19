@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.ixp_engagement.field_end_date
     - field.field.node.ixp_engagement.field_estimated_hours
     - field.field.node.ixp_engagement.field_ixp_user
+    - field.field.node.ixp_engagement.field_job_post_reference
     - field.field.node.ixp_engagement.field_mentor
     - field.field.node.ixp_engagement.field_proposed_work
     - field.field.node.ixp_engagement.field_start_date
@@ -33,6 +34,7 @@ hidden:
   field_end_date: true
   field_estimated_hours: true
   field_ixp_user: true
+  field_job_post_reference: true
   field_mentor: true
   field_proposed_work: true
   field_start_date: true

@@ -1,0 +1,19 @@
+uuid: 949d2373-1ec5-4af8-810d-ab527bc71b32
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_job_post_reference
+field_name: field_job_post_reference
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

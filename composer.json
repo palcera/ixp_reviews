@@ -151,8 +151,8 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/dxpr_theme": {
-                "Issue 3490492: Drupal 11 compatibility: Bootstrap5 theme version": "https://git.drupalcode.org/project/dxpr_theme/-/merge_requests/4.patch"
+            "drupal/group": {
+                "Issue 3494447: Undefined function field_ui_entity_operation": "https://git.drupalcode.org/project/group/-/merge_requests/204.patch"
             }
         }
     }

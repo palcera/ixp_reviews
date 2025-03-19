@@ -1,0 +1,83 @@
+uuid: 273980cc-70af-4783-92be-93c493cf2262
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.job_posting
+    - workflows.workflow.job_post_workflow
+  module:
+    - eca_content
+    - eca_user
+    - eca_workflow
+id: process_ggcsv0s
+modeller: bpmn_io
+label: 'Assign next state to job post'
+version: v0.1
+weight: 0
+events:
+  Event_09f5f0c:
+    plugin: 'content_entity:insert'
+    label: 'New job post is created'
+    configuration:
+      type: 'node job_posting'
+    successors:
+      -
+        id: Activity_1pvlbux
+        condition: ''
+conditions:
+  Flow_1q8t80p:
+    plugin: eca_entity_field_value
+    configuration:
+      negate: false
+      case: false
+      expected_value: '1'
+      field_name: field_request_coupon
+      operator: equal
+      type: value
+      entity: entity
+  Flow_1cgsfia:
+    plugin: eca_entity_field_value
+    configuration:
+      negate: false
+      case: false
+      expected_value: '0'
+      field_name: field_request_coupon
+      operator: equal
+      type: value
+      entity: entity
+gateways:
+  Gateway_0lqcce7:
+    type: 0
+    successors:
+      -
+        id: Activity_0wh3bg3
+        condition: Flow_1q8t80p
+      -
+        id: Activity_0i5n21v
+        condition: Flow_1cgsfia
+actions:
+  Activity_0wh3bg3:
+    plugin: 'eca_workflow_transition:job_post_workflow'
+    label: 'Set moderation state to Coupon Requested'
+    configuration:
+      new_state: coupon_requested
+      revision_log: ''
+      object: entity
+    successors: {  }
+  Activity_1pvlbux:
+    plugin: eca_switch_account
+    label: 'User 1 for permissions'
+    configuration:
+      user_id: '1'
+    successors:
+      -
+        id: Gateway_0lqcce7
+        condition: ''
+  Activity_0i5n21v:
+    plugin: 'eca_workflow_transition:job_post_workflow'
+    label: 'State is waiting for job post'
+    configuration:
+      new_state: waiting_post
+      revision_log: ''
+      object: entity
+    successors: {  }

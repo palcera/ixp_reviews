@@ -7,8 +7,10 @@ dependencies:
     - filter.format.full_html
     - node.type.final_report_ixp
     - node.type.ixp_engagement
+    - node.type.job_posting
     - node.type.progress_report
     - workflows.workflow.ixp_approval_process
+    - workflows.workflow.job_post_workflow
   module:
     - announcements_feed
     - comment
@@ -46,32 +48,43 @@ permissions:
   - 'create company group'
   - 'create final_report_ixp content'
   - 'create ixp_engagement content'
+  - 'create job_posting content'
   - 'create progress_report content'
   - 'create url aliases'
+  - 'delete any job_posting content'
+  - 'delete job_posting revisions'
   - 'delete own files'
   - 'delete own final_report_ixp content'
   - 'delete own ixp_engagement content'
+  - 'delete own job_posting content'
   - 'delete own progress_report content'
   - 'edit any final_report_ixp content'
   - 'edit any ixp_engagement content'
+  - 'edit any job_posting content'
   - 'edit any progress_report content'
   - 'edit own comments'
   - 'edit own final_report_ixp content'
   - 'edit own ixp_engagement content'
+  - 'edit own job_posting content'
   - 'edit own progress_report content'
   - 'post comments'
+  - 'revert job_posting revisions'
   - 'skip comment approval'
   - 'use ixp_approval_process transition approval'
   - 'use ixp_approval_process transition create_new_draft'
   - 'use ixp_approval_process transition need_more_info'
   - 'use ixp_approval_process transition publish'
   - 'use ixp_approval_process transition ready_to_review'
+  - 'use job_post_workflow transition create_new_draft'
+  - 'use job_post_workflow transition needs_coupon'
+  - 'use job_post_workflow transition ready_to_publish'
   - 'use moderation dashboard'
   - 'use moderation sidebar'
   - 'use text format basic_html'
   - 'use text format full_html'
   - 'view any moderation dashboard'
   - 'view any unpublished content'
+  - 'view job_posting revisions'
   - 'view latest version'
   - 'view own unpublished content'
   - 'view the administration theme'

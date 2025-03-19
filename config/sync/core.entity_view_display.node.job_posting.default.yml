@@ -1,0 +1,54 @@
+uuid: b7c46643-3ca5-4af8-a271-19b189ffbbb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.job_posting.field_coupon
+    - field.field.node.job_posting.field_job_post
+    - field.field.node.job_posting.field_request_coupon
+    - node.type.job_posting
+  module:
+    - link
+    - user
+id: node.job_posting.default
+targetEntityType: node
+bundle: job_posting
+mode: default
+content:
+  field_coupon:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_job_post:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_request_coupon:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
