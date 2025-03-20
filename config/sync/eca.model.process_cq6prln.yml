@@ -170,10 +170,10 @@ modeldata: |
             <camunda:string>entity</camunda:string>
           </camunda:field>
         </bpmn2:extensionElements>
-        <bpmn2:incoming>Flow_0jrzrns</bpmn2:incoming>
+        <bpmn2:incoming>Flow_1sq3zmc</bpmn2:incoming>
         <bpmn2:outgoing>Flow_15zq5er</bpmn2:outgoing>
       </bpmn2:task>
-      <bpmn2:sequenceFlow id="Flow_0jrzrns" sourceRef="Activity_1jc8sns" targetRef="Activity_17rkhz5" />
+      <bpmn2:sequenceFlow id="Flow_0jrzrns" sourceRef="Activity_1jc8sns" targetRef="Activity_18mr9pm" />
       <bpmn2:task id="Activity_1bxpj4l" name="Success Message" camunda:modelerTemplate="org.drupal.action.action_message_action">
         <bpmn2:extensionElements>
           <camunda:properties>
@@ -189,6 +189,34 @@ modeldata: |
         <bpmn2:incoming>Flow_15zq5er</bpmn2:incoming>
       </bpmn2:task>
       <bpmn2:sequenceFlow id="Flow_15zq5er" sourceRef="Activity_17rkhz5" targetRef="Activity_1bxpj4l" />
+      <bpmn2:task id="Activity_18mr9pm" name="Make user a member" camunda:modelerTemplate="org.drupal.action.group_add_member">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="group_add_member" />
+          </camunda:properties>
+          <camunda:field name="group_id">
+            <camunda:string>[company:id]</camunda:string>
+          </camunda:field>
+          <camunda:field name="entity_id">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="values">
+            <camunda:string>group_roles: company-admin</camunda:string>
+          </camunda:field>
+          <camunda:field name="add_method">
+            <camunda:string>skip_existing</camunda:string>
+          </camunda:field>
+          <camunda:field name="object">
+            <camunda:string>entity</camunda:string>
+          </camunda:field>
+          <camunda:field name="replace_tokens">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0jrzrns</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_1sq3zmc</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_1sq3zmc" sourceRef="Activity_18mr9pm" targetRef="Activity_17rkhz5" />
     </bpmn2:process>
     <bpmndi:BPMNDiagram id="sid-cad89eea-327d-446e-b2cc-e9919eabe2e3">
       <bpmndi:BPMNPlane id="sid-c63c3ca1-8e9d-40c0-8c38-011e314fdf3f" bpmnElement="Process_cq6pRLn">
@@ -214,11 +242,15 @@ modeldata: |
           <bpmndi:BPMNLabel />
         </bpmndi:BPMNShape>
         <bpmndi:BPMNShape id="Activity_17rkhz5_di" bpmnElement="Activity_17rkhz5">
-          <dc:Bounds x="980" y="170" width="100" height="80" />
+          <dc:Bounds x="1120" y="170" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_18mr9pm_di" bpmnElement="Activity_18mr9pm">
+          <dc:Bounds x="970" y="170" width="100" height="80" />
           <bpmndi:BPMNLabel />
         </bpmndi:BPMNShape>
         <bpmndi:BPMNShape id="Activity_1bxpj4l_di" bpmnElement="Activity_1bxpj4l">
-          <dc:Bounds x="1190" y="170" width="100" height="80" />
+          <dc:Bounds x="1250" y="170" width="100" height="80" />
           <bpmndi:BPMNLabel />
         </bpmndi:BPMNShape>
         <bpmndi:BPMNEdge id="Flow_0edwh7v_di" bpmnElement="Flow_0edwh7v">
@@ -245,11 +277,15 @@ modeldata: |
         </bpmndi:BPMNEdge>
         <bpmndi:BPMNEdge id="Flow_0jrzrns_di" bpmnElement="Flow_0jrzrns">
           <di:waypoint x="900" y="210" />
-          <di:waypoint x="980" y="210" />
+          <di:waypoint x="970" y="210" />
         </bpmndi:BPMNEdge>
         <bpmndi:BPMNEdge id="Flow_15zq5er_di" bpmnElement="Flow_15zq5er">
-          <di:waypoint x="1080" y="210" />
-          <di:waypoint x="1190" y="210" />
+          <di:waypoint x="1220" y="210" />
+          <di:waypoint x="1250" y="210" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_1sq3zmc_di" bpmnElement="Flow_1sq3zmc">
+          <di:waypoint x="1070" y="210" />
+          <di:waypoint x="1120" y="210" />
         </bpmndi:BPMNEdge>
       </bpmndi:BPMNPlane>
     </bpmndi:BPMNDiagram>

@@ -1,6 +1,6 @@
-uuid: e1af05e9-a45b-4e66-a221-eccd694d9eee
+uuid: 4a083511-0006-4f3b-8931-5d8d7fb4b7a6
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.field.user.user.field_role
@@ -9,11 +9,9 @@ dependencies:
     - eca_base
     - eca_content
     - eca_user
-_core:
-  default_config_hash: Rwe3kpnsBx4GMkR-0sZmGJVZPbYsLYeIoyI_Wa13lPQ
-id: eca_lib_0029
+id: process_xxepck4
 modeller: bpmn_io
-label: 'Add role to inserted or updated user'
+label: 'Add role to inserted or updated user (clone)'
 version: v3
 weight: 0
 events:
@@ -24,7 +22,7 @@ events:
       type: 'user _all'
     successors:
       -
-        id: Activity_0raovyb
+        id: Activity_1kz152s
         condition: Flow_1gi20r4
 conditions:
   Flow_1gi20r4:
@@ -35,14 +33,14 @@ conditions:
   Flow_1q84r8w:
     plugin: eca_user_role
     configuration:
-      account: '[entity]'
+      account: '[saveduser]'
       role: _eca_token
       negate: true
   Flow_14b3t2b:
     plugin: eca_user_role
     configuration:
       negate: false
-      account: '[entity]'
+      account: '[saveduser]'
       role: _eca_token
 gateways: {  }
 actions:
@@ -58,6 +56,17 @@ actions:
       -
         id: Activity_1ad4xtj
         condition: Flow_14b3t2b
+  Activity_1kz152s:
+    plugin: eca_token_set_value
+    label: 'Load saved user entity'
+    configuration:
+      token_name: saveduser
+      token_value: '[user]'
+      use_yaml: false
+    successors:
+      -
+        id: Activity_0raovyb
+        condition: ''
   Activity_1jrvkj9:
     plugin: action_message_action
     label: 'Print success message'
@@ -75,7 +84,7 @@ actions:
       strip_tags: false
       trim: false
       save_entity: false
-      object: entity
+      object: saveduser
     successors:
       -
         id: Activity_1jrvkj9
@@ -92,7 +101,7 @@ actions:
     label: 'Set role token'
     configuration:
       token_name: eca_user_role_role
-      token_value: '[entity:field_role:value]'
+      token_value: '[user:field_role:value]'
       use_yaml: false
     successors:
       -

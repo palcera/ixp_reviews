@@ -7,6 +7,7 @@ dependencies:
   module:
     - eca_content
     - eca_user
+    - group_action
     - user
 id: process_cq6prln
 modeller: bpmn_io
@@ -73,7 +74,7 @@ actions:
       object: company
     successors:
       -
-        id: Activity_17rkhz5
+        id: Activity_18mr9pm
         condition: ''
   Activity_15fktf7:
     plugin: eca_switch_account
@@ -106,3 +107,21 @@ actions:
       replace_tokens: false
       message: 'Company [entity:field_company_name] Succesfully creted.'
     successors: {  }
+  Activity_18mr9pm:
+    plugin: group_add_member
+    label: 'Make user a member'
+    configuration:
+      replace_tokens: false
+      values:
+        group_roles:
+          - company-admin
+      operation: create
+      content_plugin: group_membership
+      group_id: '[company:id]'
+      entity_id: ''
+      add_method: skip_existing
+      object: entity
+    successors:
+      -
+        id: Activity_17rkhz5
+        condition: ''
