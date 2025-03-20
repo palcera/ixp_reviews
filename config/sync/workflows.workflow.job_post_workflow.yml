@@ -41,6 +41,7 @@ type_settings:
     needs_coupon:
       label: 'Requesting a Coupon'
       from:
+        - coupon_requested
         - draft
       to: coupon_requested
       weight: 2

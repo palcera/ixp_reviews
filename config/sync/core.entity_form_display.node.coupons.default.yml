@@ -1,96 +1,74 @@
-uuid: abe0c158-df2e-44de-9569-d55066a615e8
+uuid: fb3d245b-a215-4696-8954-53c900d879b5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.job_posting.field_coupon
-    - field.field.node.job_posting.field_job_post
-    - field.field.node.job_posting.field_request_coupon
-    - node.type.job_posting
-    - workflows.workflow.job_post_workflow
+    - field.field.node.coupons.field_coupon_assigned
+    - node.type.coupons
   module:
     - content_moderation
-    - link
     - path
-id: node.job_posting.default
+id: node.coupons.default
 targetEntityType: node
-bundle: job_posting
+bundle: coupons
 mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_coupon:
-    type: entity_reference_autocomplete
-    weight: 26
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_job_post:
-    type: link_default
-    weight: 2
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_request_coupon:
+  field_coupon_assigned:
     type: boolean_checkbox
-    weight: 1
+    weight: 121
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 3
+    weight: 2
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 9
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 120
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 7
+    weight: 16
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: -5
     region: content
     settings:
       size: 60
@@ -98,7 +76,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS

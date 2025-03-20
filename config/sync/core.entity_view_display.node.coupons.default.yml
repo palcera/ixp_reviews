@@ -1,0 +1,31 @@
+uuid: b43cb2ca-f536-48b8-8001-24a4fa542365
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.coupons.field_coupon_assigned
+    - node.type.coupons
+  module:
+    - user
+id: node.coupons.default
+targetEntityType: node
+bundle: coupons
+mode: default
+content:
+  field_coupon_assigned:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

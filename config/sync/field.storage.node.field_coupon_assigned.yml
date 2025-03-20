@@ -1,15 +1,14 @@
-uuid: 5bbfcd5c-a3d7-4ef1-9556-0fa3c7a973dc
+uuid: 64b252fd-e6ac-494d-9100-33ccf56901ca
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_coupon
-field_name: field_coupon
+id: node.field_coupon_assigned
+field_name: field_coupon_assigned
 entity_type: node
-type: entity_reference
-settings:
-  target_type: node
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

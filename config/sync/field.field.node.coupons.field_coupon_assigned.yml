@@ -1,0 +1,21 @@
+uuid: b63b5cca-2da6-455a-969d-dec5fdae61b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coupon_assigned
+    - node.type.coupons
+id: node.coupons.field_coupon_assigned
+field_name: field_coupon_assigned
+entity_type: node
+bundle: coupons
+label: 'Coupon Assigned'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

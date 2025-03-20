@@ -773,6 +773,37 @@ display:
       tags:
         - 'config:field.storage.group_relationship.group_roles'
         - 'config:field.storage.user.field_real_name'
+  entity_reference_1:
+    id: entity_reference_1
+    display_title: 'Entity Reference'
+    display_plugin: entity_reference
+    position: 2
+    display_options:
+      style:
+        type: entity_reference
+        options:
+          search_fields:
+            field_real_name: field_real_name
+            name: name
+            group_roles: '0'
+            changed: '0'
+            created: '0'
+            view_group_relationship: '0'
+            edit_group_relationship: '0'
+            delete_group_relationship: '0'
+            dropbutton: '0'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - route.group
+        - url
+        - user.group_permissions
+      tags:
+        - 'config:field.storage.group_relationship.group_roles'
+        - 'config:field.storage.user.field_real_name'
   page_1:
     id: page_1
     display_title: Page

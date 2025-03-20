@@ -1,4 +1,4 @@
-uuid: fbf59231-ecaf-4483-b9df-46e01d10f765
+uuid: 1958a9c0-6306-4409-a046-a1850da55556
 langcode: en
 status: true
 dependencies:
@@ -15,5 +15,11 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: coupons_views
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference
