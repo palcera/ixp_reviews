@@ -1,15 +1,15 @@
-uuid: f9ee14e0-c05a-4dac-9a0a-825a22a2900c
+uuid: 48e539f3-747c-4d74-86bb-226f0c39d653
 langcode: en
 status: true
 dependencies:
   module:
     - user
-id: user.field_reason_to_join
-field_name: field_reason_to_join
+id: user.field_drupal_slack
+field_name: field_drupal_slack
 entity_type: user
 type: string
 settings:
-  max_length: 255
+  max_length: 19
   case_sensitive: false
   is_ascii: false
 module: core

@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.moderation_dashboard
+    - field.field.user.user.field_address
     - field.field.user.user.field_company_created
     - field.field.user.user.field_company_name
+    - field.field.user.user.field_drupal_slack
+    - field.field.user.user.field_phone_number
     - field.field.user.user.field_real_name
-    - field.field.user.user.field_reason_to_join
     - field.field.user.user.field_role
     - field.field.user.user.user_picture
     - views.view.content_moderation_dashboard_in_review
@@ -165,10 +167,12 @@ bundle: user
 mode: moderation_dashboard
 content: {  }
 hidden:
+  field_address: true
   field_company_created: true
   field_company_name: true
+  field_drupal_slack: true
+  field_phone_number: true
   field_real_name: true
-  field_reason_to_join: true
   field_role: true
   langcode: true
   member_for: true

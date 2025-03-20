@@ -1,0 +1,20 @@
+uuid: cddc2a23-0feb-4977-b146-94b92c944693
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_drupal_slack
+  module:
+    - user
+id: user.user.field_drupal_slack
+field_name: field_drupal_slack
+entity_type: user
+bundle: user
+label: 'Drupal Slack Handle'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

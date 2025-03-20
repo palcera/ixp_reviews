@@ -1,0 +1,24 @@
+uuid: f617da76-138d-456e-975d-61935e2680eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_challenging_tasks
+    - filter.format.restricted_html
+    - node.type.progress_report
+  module:
+    - text
+id: node.progress_report.field_challenging_tasks
+field_name: field_challenging_tasks
+entity_type: node
+bundle: progress_report
+label: 'Challenging Tasks'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - restricted_html
+field_type: text_long

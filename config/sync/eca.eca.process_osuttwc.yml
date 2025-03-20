@@ -1,0 +1,70 @@
+uuid: 39814a37-c581-4dfc-ba9d-7ba81c21e8a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.coupons.field_coupon_assigned
+    - field.field.node.job_posting.field_coupon
+    - field.storage.node.field_coupon
+    - field.storage.node.field_coupon_assigned
+    - node.type.job_posting
+  module:
+    - eca_content
+    - eca_workflow
+id: process_osuttwc
+modeller: bpmn_io
+label: 'Cpupon assignment'
+version: ''
+weight: 0
+events:
+  Event_17hkm17:
+    plugin: 'workflow:transition'
+    label: 'Coupon has been assigned'
+    configuration:
+      type: 'node job_posting'
+      from_state: coupon_requested
+      to_state: waiting_post
+    successors:
+      -
+        id: Activity_1vg2edp
+        condition: Flow_0jd0l31
+conditions:
+  Flow_0jd0l31:
+    plugin: eca_entity_field_value_empty
+    configuration:
+      field_name: field_coupon
+      negate: true
+      entity: node
+gateways: {  }
+actions:
+  Activity_1vg2edp:
+    plugin: eca_token_load_entity_ref
+    label: 'Load the coupon'
+    configuration:
+      field_name_entity_ref: field_coupon
+      token_name: coupon
+      from: current
+      entity_type: node
+      entity_id: ''
+      revision_id: ''
+      properties: ''
+      langcode: _interface
+      latest_revision: false
+      unchanged: false
+      object: node
+    successors:
+      -
+        id: Activity_1p4u4r1
+        condition: ''
+  Activity_1p4u4r1:
+    plugin: eca_set_field_value
+    label: 'Mark coupon as used'
+    configuration:
+      field_name: field_coupon_assigned
+      field_value: '1'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: true
+      object: coupon
+    successors: {  }

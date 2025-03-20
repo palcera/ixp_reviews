@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.progress_report.field_assigned_tasks
+    - field.field.node.progress_report.field_challenging_tasks
     - field.field.node.progress_report.field_ixp_case
     - field.field.node.progress_report.field_ixp_links
     - field.field.node.progress_report.field_mentor_available
@@ -24,6 +25,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_challenging_tasks:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_ixp_case:
     type: entity_reference_label

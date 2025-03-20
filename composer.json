@@ -42,7 +42,7 @@
         "drupal/editoria11y": "^2.1",
         "drupal/entity_browser": "^2.9",
         "drupal/entity_usage": "^2.0@beta",
-        "drupal/field_group": "^3.4",
+        "drupal/field_group": "^3.6",
         "drupal/focal_point": "^2.0",
         "drupal/gin": "^3.0@rc",
         "drupal/gin_toolbar": "^1.0@rc",

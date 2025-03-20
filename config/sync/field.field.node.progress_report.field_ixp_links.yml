@@ -18,6 +18,7 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
+  add_more_label: ''
   field_settings:
     value:
       type: url
@@ -25,6 +26,7 @@ settings:
       check_empty: false
       widget_settings:
         label: Value
+        translatable: false
         settings:
           description: ''
           description_display: after
@@ -40,6 +42,7 @@ settings:
       check_empty: false
       widget_settings:
         label: 'Link description'
+        translatable: false
         settings:
           description: ''
           description_display: after

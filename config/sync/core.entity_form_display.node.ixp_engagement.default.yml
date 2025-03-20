@@ -18,8 +18,27 @@ dependencies:
   module:
     - content_moderation
     - datetime
+    - field_group
     - path
     - text
+third_party_settings:
+  field_group:
+    group_acknowledgements:
+      children:
+        - field_blog_ack
+        - field_drupal_credit_ack
+      label: Acknowledgements
+      region: content
+      parent_name: ''
+      weight: 15
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        description: ''
+        required_fields: true
 id: node.ixp_engagement.default
 targetEntityType: node
 bundle: ixp_engagement
@@ -44,12 +63,6 @@ content:
     region: content
     settings:
       display_label: true
-    third_party_settings: {  }
-  field_end_date:
-    type: datetime_default
-    weight: 17
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_estimated_hours:
     type: number
@@ -162,3 +175,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_case_number: true
+  field_end_date: true
