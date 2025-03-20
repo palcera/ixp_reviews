@@ -72,6 +72,7 @@
         "drupal/search404": "^2.2@RC",
         "drupal/seckit": "^2.0",
         "drupal/security_review": "^3",
+        "drupal/select2": "^2",
         "drupal/seo_checklist": "^5.2",
         "drupal/simple_sitemap": "^4.1",
         "drupal/sitemap": "^2.0",
@@ -80,6 +81,7 @@
         "drupal/upgrade_status": "^4.3",
         "drupal/user_current_paths": "^2.0",
         "drush/drush": "^13",
+        "mglaman/composer-drupal-lenient": "^1.0",
         "oomphinc/composer-installers-extender": "^2.0"
     },
     "conflict": {
@@ -93,6 +95,7 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
+            "mglaman/composer-drupal-lenient": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true
@@ -153,7 +156,15 @@
         "patches": {
             "drupal/group": {
                 "Issue 3494447: Undefined function field_ui_entity_operation": "https://git.drupalcode.org/project/group/-/merge_requests/204.patch"
+            },
+            "drupal/entity_reference_views" : {
+                "Issue 3514454: The Select2 requirement is not compatible with Drupal 11": "https://git.drupalcode.org/project/entity_reference_views/-/merge_requests/8.patch"
             }
+        },
+        "drupal-lenient": {
+            "allowed-list": [
+              "drupal/entity_reference_views"
+            ]
         }
     }
 }

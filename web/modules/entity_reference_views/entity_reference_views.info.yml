@@ -1,0 +1,9 @@
+name: Entity Reference Views
+type: module
+description: 'Provides functionality to display reference field in a view'
+package: Field types
+core_version_requirement: ^8.8 || ^9 || ^10 || ^11
+dependencies:
+  - drupal:field
+  - drupal:views
+  - drupal:select2
