@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.coupons
     - node.type.ixp_engagement
     - node.type.job_posting
     - workflows.workflow.ixp_approval_process
@@ -25,11 +26,14 @@ permissions:
   - 'access site-wide contact form'
   - 'access user profiles'
   - 'create company group'
+  - 'create coupons content'
   - 'create ixp_engagement content'
   - 'create job_posting content'
+  - 'delete own coupons content'
   - 'delete own ixp_engagement content'
   - 'delete own job_posting content'
   - 'edit own comments'
+  - 'edit own coupons content'
   - 'edit own ixp_engagement content'
   - 'edit own job_posting content'
   - 'post comments'

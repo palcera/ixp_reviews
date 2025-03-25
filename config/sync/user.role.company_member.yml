@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.coupons
     - node.type.job_posting
     - workflows.workflow.ixp_approval_process
     - workflows.workflow.job_post_workflow
@@ -17,8 +18,11 @@ is_admin: null
 permissions:
   - 'access group overview'
   - 'access user profiles'
+  - 'create coupons content'
   - 'create job_posting content'
+  - 'delete own coupons content'
   - 'delete own job_posting content'
+  - 'edit own coupons content'
   - 'edit own job_posting content'
   - 'use ixp_approval_process transition create_new_draft'
   - 'use ixp_approval_process transition publish'

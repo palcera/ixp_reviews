@@ -10,7 +10,6 @@ dependencies:
     - workflows.workflow.job_post_workflow
   module:
     - content_moderation
-    - link
     - path
 id: node.job_posting.default
 targetEntityType: node
@@ -19,27 +18,19 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_coupon:
     type: entity_reference_autocomplete
-    weight: 26
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_job_post:
-    type: link_default
-    weight: 2
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   field_request_coupon:
     type: boolean_checkbox
@@ -50,40 +41,40 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 3
+    weight: 2
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -98,7 +89,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -106,4 +97,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_job_post: true
