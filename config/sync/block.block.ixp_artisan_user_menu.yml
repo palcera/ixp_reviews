@@ -12,8 +12,8 @@ _core:
   default_config_hash: B5Wg45XJdDLYsGt6-6nyiXou502VSmHFp17hnUZc00E
 id: ixp_artisan_user_menu
 theme: ixp_artisan
-region: header_top
-weight: 0
+region: secondary_menu
+weight: -5
 provider: null
 plugin: 'system_menu_block:account'
 settings:
