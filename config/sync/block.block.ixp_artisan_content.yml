@@ -1,0 +1,22 @@
+uuid: 19c3e339-044f-4d37-9748-a445b5374b81
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ixp_artisan
+_core:
+  default_config_hash: 1-_nS4V87t_yQ4hMfHyOAk2lKKNYyEPcLSAqDmH2x-A
+id: ixp_artisan_content
+theme: ixp_artisan
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

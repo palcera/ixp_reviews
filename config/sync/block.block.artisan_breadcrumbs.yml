@@ -1,0 +1,26 @@
+uuid: 9caea669-4578-448b-b7f1-ef6839aacf6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - artisan
+_core:
+  default_config_hash: rDksOF2ybhjJxhV-01wBwJjw24GasgsIxmJhSVZle9k
+id: artisan_breadcrumbs
+theme: artisan
+region: content
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/user/*'

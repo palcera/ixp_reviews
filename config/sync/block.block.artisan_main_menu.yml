@@ -1,0 +1,27 @@
+uuid: f60a738b-0b82-4c58-98ae-56ecc7e2d03a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - artisan
+_core:
+  default_config_hash: 5DyORTsvMmnJo46_3cR-cigmP5Ui80sKqjVEfUd6eng
+id: artisan_main_menu
+theme: artisan
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

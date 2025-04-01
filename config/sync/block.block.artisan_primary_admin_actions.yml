@@ -1,0 +1,20 @@
+uuid: 74ca450d-91db-40e7-ba03-4b2903903720
+langcode: en
+status: true
+dependencies:
+  theme:
+    - artisan
+_core:
+  default_config_hash: dz9Q52L1JQhfOOORfYEWNi3HVbJNJ449b27R_-CpxR0
+id: artisan_primary_admin_actions
+theme: artisan
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

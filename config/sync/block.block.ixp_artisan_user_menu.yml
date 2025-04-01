@@ -1,0 +1,27 @@
+uuid: b0085748-9e58-4db1-83fc-e913b60a8371
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - ixp_artisan
+_core:
+  default_config_hash: B5Wg45XJdDLYsGt6-6nyiXou502VSmHFp17hnUZc00E
+id: ixp_artisan_user_menu
+theme: ixp_artisan
+region: header_top
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
