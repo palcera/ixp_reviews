@@ -1,0 +1,22 @@
+uuid: 7dea7d77-5ea6-45f9-b277-47341662b3a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ixp_artisan
+_core:
+  default_config_hash: b2bbdrQBX6VwEQUW_KEb4yoGqaNwAjOETUUEV2pzY2o
+id: ixp_artisan_messages
+theme: ixp_artisan
+region: content
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

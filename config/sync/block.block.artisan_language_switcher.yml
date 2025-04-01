@@ -1,0 +1,22 @@
+uuid: acd97d39-fbd1-4c9d-b733-7edf929c1588
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - artisan
+_core:
+  default_config_hash: aVj8HQ_mlWc8GxOtDzYn1E6D3T2HZ7u89Nhv5QF8pa8
+id: artisan_language_switcher
+theme: artisan
+region: header
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  label_display: '0'
+  provider: language
+visibility: {  }

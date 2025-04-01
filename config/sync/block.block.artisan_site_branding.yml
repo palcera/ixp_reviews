@@ -1,0 +1,25 @@
+uuid: adcb267e-c876-4a51-81e3-cc84aea58a64
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - artisan
+_core:
+  default_config_hash: Ap7Aj-Zt_kHBCBrxrZ9x67XkH3H0ayBUzsJcJSlnxcU
+id: artisan_site_branding
+theme: artisan
+region: branding
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

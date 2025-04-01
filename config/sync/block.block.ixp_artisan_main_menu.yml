@@ -1,0 +1,27 @@
+uuid: 9f77e5ed-b536-438c-a268-1ac56a81a5e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - ixp_artisan
+_core:
+  default_config_hash: vjpIMchbEgRZTsnEE0qFojZzACXAc_1HG7ZoYLxys9I
+id: ixp_artisan_main_menu
+theme: ixp_artisan
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

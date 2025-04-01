@@ -1,0 +1,20 @@
+uuid: 457122c5-32fc-4785-b445-7f73e3c2f9d3
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ixp_artisan
+_core:
+  default_config_hash: wNMHDII03xnzvyWIDA7inywyM3Men26ombn_Bbtgt7o
+id: ixp_artisan_primary_admin_actions
+theme: ixp_artisan
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

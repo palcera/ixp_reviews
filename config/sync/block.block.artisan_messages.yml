@@ -1,0 +1,22 @@
+uuid: 6f8b1a0a-f6cf-4639-841f-72a44a1b0327
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - artisan
+_core:
+  default_config_hash: 7Xv4cY66Qd-knEW2hYcps6NHR5m7M3cVCFxBXdmvbsE
+id: artisan_messages
+theme: artisan
+region: content
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

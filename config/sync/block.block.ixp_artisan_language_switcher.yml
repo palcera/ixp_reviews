@@ -1,0 +1,22 @@
+uuid: 6117549a-5f2b-40ac-8c00-81e86b338fc9
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - ixp_artisan
+_core:
+  default_config_hash: 8adjtscjiZ6hw2dz-yJu3RDGaADd_1tHU05NdDER4BU
+id: ixp_artisan_language_switcher
+theme: ixp_artisan
+region: header
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  label_display: '0'
+  provider: language
+visibility: {  }

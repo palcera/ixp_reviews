@@ -1,0 +1,27 @@
+uuid: ea7b0645-ea29-47fb-9a8a-172e010505f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - artisan
+_core:
+  default_config_hash: YvJHRIblSFTQZTGKTZIc6Mz7h_B-QBGsp4gxNVSUN1o
+id: artisan_footer_menu
+theme: artisan
+region: footer_top
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 33c1dd7f-9326-4040-af4f-518c333e9e5e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ixp_artisan
+_core:
+  default_config_hash: lDCEKE_LheRgOnDbFemqP3l6HXDm-l9BHC8kGdfRYcE
+id: ixp_artisan_secondary_local_tasks
+theme: ixp_artisan
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }
