@@ -1,0 +1,18 @@
+uuid: 3ccdc57f-a7fe-4483-b0e0-59ce9998d492
+langcode: en
+status: false
+dependencies: {  }
+id: prod
+label: Prod
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/envs/prod
+module:
+  brevo: 0
+  brevo_mailer: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }
