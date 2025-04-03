@@ -13,7 +13,7 @@ folder: ../config/envs/prod
 module:
   brevo: 0
   brevo_mailer: 0
-  mailsysten: 0
+  mailsystem: 0
 theme: {  }
 complete_list: {  }
 partial_list: {  }
