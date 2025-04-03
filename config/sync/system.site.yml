@@ -3,7 +3,7 @@ _core:
 langcode: en
 uuid: 57a5f9bc-f025-4523-8fb0-8086343fc5d1
 name: 'IXP Registration'
-mail: ixp@palcera.com
+mail: no-reply@drupal-ixp.site
 slogan: ''
 page:
   403: ''
