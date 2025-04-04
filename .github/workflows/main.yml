@@ -48,6 +48,13 @@ jobs:
           [ -d deploy/web/themes/custom ] && rm -rf deploy/web/themes/custom
           cp -r web/themes/custom deploy/web/themes
 
+      # Compile the theme
+      - name: Compiling Artisan themes/custom/ixp_artisan
+        run: |
+          echo "Compiling Artisan themes/custom/ixp_artisan..."
+          npm install
+          npm run production
+
       # Copy sync folder
       - name: Copy sync folder
         run: |
