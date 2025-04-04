@@ -13,7 +13,7 @@ _core:
 id: ixp_artisan_footer_menu
 theme: ixp_artisan
 region: footer_top
-weight: 0
+weight: -4
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

@@ -8,8 +8,8 @@ dependencies:
     - ixp_artisan
 id: ixp_artisan_poweredbydrupal
 theme: ixp_artisan
-region: footer_bottom
-weight: 0
+region: footer_top
+weight: -5
 provider: null
 plugin: system_powered_by_block
 settings:
