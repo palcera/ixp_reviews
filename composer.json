@@ -46,6 +46,7 @@
         "drupal/entity_usage": "^2.0@beta",
         "drupal/field_group": "^3.6",
         "drupal/focal_point": "^2.0",
+        "drupal/formblock": "^2.0@beta",
         "drupal/gin": "^3.0@rc",
         "drupal/gin_toolbar": "^1.0@rc",
         "drupal/google_tag": "^2.0",
