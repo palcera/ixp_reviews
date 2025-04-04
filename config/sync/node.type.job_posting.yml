@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'Job posting'
 type: job_posting
-description: 'In this content Companies can inform of the job posting and request a coupon for a free job post in jobs.drupal.org'
+description: 'In this content Companies can request a coupon for a free job post in jobs.drupal.org'
 help: null
 new_revision: true
 preview_mode: 1

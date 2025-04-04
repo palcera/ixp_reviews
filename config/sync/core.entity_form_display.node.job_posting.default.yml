@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.job_posting.field_coupon
-    - field.field.node.job_posting.field_job_post
     - field.field.node.job_posting.field_request_coupon
     - node.type.job_posting
     - workflows.workflow.job_post_workflow
@@ -97,5 +96,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_job_post: true
+hidden: {  }

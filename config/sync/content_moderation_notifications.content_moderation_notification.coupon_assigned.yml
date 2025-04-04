@@ -1,0 +1,18 @@
+uuid: 925ed11f-242e-4f9e-97c9-2ed1bca65984
+langcode: en
+status: true
+dependencies: {  }
+id: coupon_assigned
+workflow: job_post_workflow
+transitions:
+  publish: publish
+roles:
+  ixp_reviewer: ixp_reviewer
+author: true
+site_mail: false
+emails: ''
+subject: 'Coupon Assigned'
+body:
+  value: '<p>A coupon has been assigned to publish a free Job in jobs.drupal.org</p>'
+  format: basic_html
+label: 'Coupon assigned'

@@ -22,15 +22,10 @@ type_settings:
       published: false
       default_revision: false
     published:
-      label: 'Published - Competed'
+      label: 'Assigned - Competed'
       weight: 1
       published: true
       default_revision: true
-    waiting_post:
-      label: 'Waiting on Job Post'
-      weight: 3
-      published: false
-      default_revision: false
   transitions:
     create_new_draft:
       label: 'Create New Draft'
@@ -49,16 +44,8 @@ type_settings:
       label: Publish
       from:
         - published
-        - waiting_post
       to: published
       weight: 1
-    ready_to_publish:
-      label: 'Ready to Publish'
-      from:
-        - coupon_requested
-        - draft
-      to: waiting_post
-      weight: 3
   entity_types:
     node:
       - job_posting

@@ -1,0 +1,18 @@
+uuid: 4766ab51-ef42-4f4a-a809-72992a132a69
+langcode: en
+status: true
+dependencies: {  }
+id: coupon_requested
+workflow: job_post_workflow
+transitions:
+  needs_coupon: needs_coupon
+roles:
+  ixp_reviewer: ixp_reviewer
+author: false
+site_mail: true
+emails: ''
+subject: 'A company has requested a coupon'
+body:
+  value: '<p>A company has requested a coupon, please assign.</p>'
+  format: basic_html
+label: 'Coupon requested'
