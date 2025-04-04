@@ -19,6 +19,11 @@
 /web/profiles/contrib
 /web/themes/contrib
 
+#Directories for node compilation
+/web/themes/custom/*/node_modules
+/web/themes/custom/*/package-lock.json
+/web/themes/custom/*/build
+
 # Ignore paths that may contain temporary files
 /web/sites/*/translations
 /web/sites/*/tmp

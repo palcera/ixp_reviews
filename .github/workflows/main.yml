@@ -55,10 +55,7 @@ jobs:
           cd deploy/web/themes/custom/ixp_artisan
           npm install
           npm run production
-          cd ../../../..
-          git status
-          git add web/themes/custom/ixp_artisan/build/*
-          cd ..
+          cd ../../../../..
 
       # Copy sync folder
       - name: Copy sync folder
