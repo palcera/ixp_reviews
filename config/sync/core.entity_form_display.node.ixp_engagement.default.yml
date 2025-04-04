@@ -8,17 +8,21 @@ dependencies:
     - field.field.node.ixp_engagement.field_drupal_credit_ack
     - field.field.node.ixp_engagement.field_end_date
     - field.field.node.ixp_engagement.field_estimated_hours
+    - field.field.node.ixp_engagement.field_how_find_ixp
+    - field.field.node.ixp_engagement.field_ixp_explanation
     - field.field.node.ixp_engagement.field_ixp_user
-    - field.field.node.ixp_engagement.field_job_post_reference
+    - field.field.node.ixp_engagement.field_job_link
     - field.field.node.ixp_engagement.field_mentor
     - field.field.node.ixp_engagement.field_proposed_work
     - field.field.node.ixp_engagement.field_start_date
     - node.type.ixp_engagement
     - workflows.workflow.ixp_approval_process
   module:
+    - conditional_fields
     - content_moderation
     - datetime
     - field_group
+    - link
     - path
     - text
 third_party_settings:
@@ -71,6 +75,39 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_how_find_ixp:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ixp_explanation:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        3a9b462e-cab4-4962-be60-18d28aedc132:
+          entity_type: node
+          bundle: ixp_engagement
+          dependee: field_how_find_ixp
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: direct
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_ixp_user:
     type: entity_reference_autocomplete
     weight: 11
@@ -81,16 +118,33 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_job_post_reference:
-    type: entity_reference_autocomplete
-    weight: 1
+  field_job_link:
+    type: link_default
+    weight: 28
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings:
+      conditional_fields:
+        185262ad-5503-4b9e-8282-25a93a0b1731:
+          entity_type: node
+          bundle: ixp_engagement
+          dependee: field_how_find_ixp
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: drupal_jobs
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_mentor:
     type: entity_reference_autocomplete
     weight: 10

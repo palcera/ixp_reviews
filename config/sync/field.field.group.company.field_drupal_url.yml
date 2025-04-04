@@ -1,0 +1,23 @@
+uuid: b00b7967-6692-45f8-8d6e-5d03e13bfc93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_drupal_url
+    - group.type.company
+  module:
+    - link
+id: group.company.field_drupal_url
+field_name: field_drupal_url
+entity_type: group
+bundle: company
+label: 'Drupal URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

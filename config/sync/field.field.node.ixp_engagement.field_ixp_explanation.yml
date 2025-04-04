@@ -1,0 +1,19 @@
+uuid: 2de10f6b-ec60-4fbe-93a5-501984d0eddd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ixp_explanation
+    - node.type.ixp_engagement
+id: node.ixp_engagement.field_ixp_explanation
+field_name: field_ixp_explanation
+entity_type: node
+bundle: ixp_engagement
+label: 'IXP relationship explanation'
+description: 'Quick explanation on how did you established the relationship with your IXP'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

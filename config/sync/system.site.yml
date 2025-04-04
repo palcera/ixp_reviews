@@ -3,8 +3,8 @@ _core:
 langcode: en
 uuid: 57a5f9bc-f025-4523-8fb0-8086343fc5d1
 name: 'IXP Registration'
-mail: no-reply@drupal-ixp.site
-slogan: ''
+mail: admin@drupal-ixp.site
+slogan: 'The site to register your IXP Engagement'
 page:
   403: ''
   404: ''
@@ -12,4 +12,4 @@ page:
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
-mail_notification: ''
+mail_notification: admin@drupal-ixp.site

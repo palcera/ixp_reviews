@@ -1,0 +1,39 @@
+uuid: 8145599b-fae8-4736-8c64-eaf0943d9ff8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.company.field_drupal_url
+    - group.type.company
+  module:
+    - link
+id: group.company.default
+targetEntityType: group
+bundle: company
+mode: default
+content:
+  field_drupal_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden:
+  changed: true
+  created: true
+  langcode: true
+  uid: true

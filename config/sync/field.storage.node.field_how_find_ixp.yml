@@ -1,0 +1,27 @@
+uuid: f96489bd-6f2f-4734-8216-10db545dcb44
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_how_find_ixp
+field_name: field_how_find_ixp
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: direct
+      label: Direct
+    -
+      value: drupal_jobs
+      label: 'Drupal Jobs'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

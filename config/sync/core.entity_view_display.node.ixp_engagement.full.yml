@@ -9,8 +9,10 @@ dependencies:
     - field.field.node.ixp_engagement.field_drupal_credit_ack
     - field.field.node.ixp_engagement.field_end_date
     - field.field.node.ixp_engagement.field_estimated_hours
+    - field.field.node.ixp_engagement.field_how_find_ixp
+    - field.field.node.ixp_engagement.field_ixp_explanation
     - field.field.node.ixp_engagement.field_ixp_user
-    - field.field.node.ixp_engagement.field_job_post_reference
+    - field.field.node.ixp_engagement.field_job_link
     - field.field.node.ixp_engagement.field_mentor
     - field.field.node.ixp_engagement.field_proposed_work
     - field.field.node.ixp_engagement.field_start_date
@@ -118,5 +120,7 @@ content:
     weight: 1
     region: content
 hidden:
-  field_job_post_reference: true
+  field_how_find_ixp: true
+  field_ixp_explanation: true
+  field_job_link: true
   langcode: true

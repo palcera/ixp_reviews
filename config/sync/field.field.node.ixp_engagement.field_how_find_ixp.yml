@@ -1,0 +1,21 @@
+uuid: f0367ef2-d978-424f-9e9c-ed878fcb9ba3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_how_find_ixp
+    - node.type.ixp_engagement
+  module:
+    - options
+id: node.ixp_engagement.field_how_find_ixp
+field_name: field_how_find_ixp
+entity_type: node
+bundle: ixp_engagement
+label: 'How you find your IXP'
+description: 'Select how did you establish the relation with the IXP'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

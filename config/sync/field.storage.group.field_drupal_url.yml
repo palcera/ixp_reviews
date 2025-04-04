@@ -1,0 +1,19 @@
+uuid: 5085f070-f8c1-43d2-add1-fba9eae7acf1
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - link
+id: group.field_drupal_url
+field_name: field_drupal_url
+entity_type: group
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

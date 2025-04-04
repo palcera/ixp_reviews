@@ -8,8 +8,10 @@ dependencies:
     - field.field.node.ixp_engagement.field_drupal_credit_ack
     - field.field.node.ixp_engagement.field_end_date
     - field.field.node.ixp_engagement.field_estimated_hours
+    - field.field.node.ixp_engagement.field_how_find_ixp
+    - field.field.node.ixp_engagement.field_ixp_explanation
     - field.field.node.ixp_engagement.field_ixp_user
-    - field.field.node.ixp_engagement.field_job_post_reference
+    - field.field.node.ixp_engagement.field_job_link
     - field.field.node.ixp_engagement.field_mentor
     - field.field.node.ixp_engagement.field_proposed_work
     - field.field.node.ixp_engagement.field_start_date
@@ -19,6 +21,8 @@ dependencies:
   module:
     - layout_builder
     - layout_discovery
+    - link
+    - options
     - smart_date
     - text
     - user
@@ -659,22 +663,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 9
             additional: {  }
-          54dfd29f-926f-4632-87ab-21e8ea2a62aa:
-            uuid: 54dfd29f-926f-4632-87ab-21e8ea2a62aa
-            region: first
-            configuration:
-              id: 'field_block:node:ixp_engagement:field_job_post_reference'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: entity_reference_label
-                label: above
-                settings:
-                  link: true
-                third_party_settings: {  }
-            weight: -5
-            additional: {  }
           a6e28194-e870-493a-9300-5dde096be59d:
             uuid: a6e28194-e870-493a-9300-5dde096be59d
             region: second
@@ -773,6 +761,57 @@ third_party_settings:
                     class: null
                   scroll_effects:
                     class: null
+          eb6a7f47-314a-42fd-9da2-b134a6746ccb:
+            uuid: eb6a7f47-314a-42fd-9da2-b134a6746ccb
+            region: first
+            configuration:
+              id: 'field_block:node:ixp_engagement:field_how_find_ixp'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          c0ca5a1d-523d-4071-a685-80ac2cc3cc70:
+            uuid: c0ca5a1d-523d-4071-a685-80ac2cc3cc70
+            region: first
+            configuration:
+              id: 'field_block:node:ixp_engagement:field_ixp_explanation'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          6fe03b2d-ebe4-4992-91c6-a101722b4cb1:
+            uuid: 6fe03b2d-ebe4-4992-91c6-a101722b4cb1
+            region: first
+            configuration:
+              id: 'field_block:node:ixp_engagement:field_job_link'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -861,6 +900,21 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
+  field_how_find_ixp:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: first
+  field_ixp_explanation:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: first
   field_ixp_user:
     type: entity_reference_label
     label: above
@@ -869,13 +923,17 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_job_post_reference:
-    type: entity_reference_label
+  field_job_link:
+    type: link
     label: above
     settings:
-      link: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 10
+    weight: 12
     region: first
   field_mentor:
     type: entity_reference_label
