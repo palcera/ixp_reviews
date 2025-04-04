@@ -55,7 +55,10 @@ jobs:
           cd deploy/web/themes/custom/ixp_artisan
           npm install
           npm run production
-          cd ../../../../..
+          cd ../../../..
+          git status
+          git add web/themes/custom/ixp_artisan/build/*
+          cd ..
 
       # Copy sync folder
       - name: Copy sync folder
@@ -77,6 +80,6 @@ jobs:
           cd deploy
           #Temporary fix for the dev version of manage_display
           rm -rf web/modules/contrib/manage_display/.git
-          git add .
+          git add -A
           git commit -m "Automated deploy update for tag $GITHUB_REF_NAME"
           git push https://${{ secrets.DEPLOY_REPO_PAT }}@github.com/palcera/ixp_deploy.git main
