@@ -52,10 +52,10 @@ jobs:
       - name: Compiling Artisan themes/custom/ixp_artisan
         run: |
           echo "Compiling Artisan themes/custom/ixp_artisan..."
-          cd web/themes/custom/ixp_artisan
+          cd deploy/web/themes/custom/ixp_artisan
           npm install
           npm run production
-          cd ../../../..
+          cd ../../../../..
 
       # Copy sync folder
       - name: Copy sync folder
