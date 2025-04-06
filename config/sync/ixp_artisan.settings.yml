@@ -1,19 +1,20 @@
 _core:
   default_config_hash: 0F3a7hzYBUXILJ3ackZD4KaQzEcnU9ZR--TB1r7xko8
 favicon:
-  use_default: true
+  use_default: 1
 features:
-  comment_user_picture: true
-  comment_user_verification: true
-  favicon: true
-  node_user_picture: true
+  comment_user_picture: 0
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: 1
 logo:
-  use_default: true
-dark_mode: false
+  use_default: 0
+  path: 'public://drupal-ixp-program-logo.svg'
+dark_mode: 0
 presets: '{"happiness":{"label":"Happiness","keys":{"palette_branding_primary":"#d336a9","palette_branding_secondary":"#0d2dce","palette_primary":"#c22e9b","palette_secondary":"#0d2dce","palette_success":"#2bff00","palette_info":"#00ccff","palette_warning":"#e6b400","palette_danger":"#ff0033","palette_light":"#f2f2f2","palette_dark":"#7d7d7d","palette_white":"#ffffff","palette_black":"#000000","base_font_size":"1rem","base_font_weight":"400","base_font_family":"Roboto","base_font_line_height":"1.5","links_color":"#d336a9","links_accent_color":"#d336a9","body_color":"#000000","body_background":"#ffffff","layout_content_max_width":"1540px","layout_spacing":"1.5rem","header_links_font_size":"1rem","header_links_font_family":"Roboto","header_links_font_weight":"700","header_links_color":"#d336a9","header_top_color":"#ffffff","header_top_background":"#f2f2f2","header_top_links_font_size":"1rem","header_top_links_font_family":"Roboto","header_top_links_font_weight":"700","header_top_links_decoration":"underline","header_top_links_color":"#000000","breadcrumb_font_size":"1rem","breadcrumb_font_family":"Arima","breadcrumb_padding_x":"1rem","breadcrumb_padding_y":"1rem","breadcrumb_divider":"''≫''","breadcrumb_color":"#d336a9","breadcrumb_background":"#f2f2f2","breadcrumb_accent_color":"#0d2dce","headings_font_family":"Arima","headings_font_weight":"700","h1_font_size_lg":"4.5rem","h2_font_size_lg":"4rem","h3_font_size_lg":"3rem","h4_font_size_lg":"2rem","h5_font_size_lg":"1.5rem","btn_border_width":"1px","btn_border_radius":"0.7rem","btn_font_weight":"400","btn_padding_x":"1.5rem","btn_padding_y":"1rem","btn_line_height":"1.5","btn_font_family":"Roboto","btn_font_size":"1rem","btn_primary_color":"#ffffff","btn_primary_background":"#d336a9","btn_primary_border_color":"#d336a9","btn_primary_accent_color":"#ffffff","btn_primary_accent_background":"#d336a9","btn_primary_accent_border_color":"#d336a9","btn_outline_primary_color":"#d336a9","btn_outline_primary_border_color":"#d336a9","btn_outline_primary_accent_color":"#ffffff","btn_outline_primary_accent_background":"#d336a9","btn_outline_primary_accent_border_color":"#d336a9","btn_secondary_color":"#ffffff","btn_secondary_background":"#0d2dce","btn_secondary_border_color":"#0d2dce","btn_secondary_accent_color":"#ffffff","btn_secondary_accent_background":"#0d2dce","btn_secondary_accent_border_color":"#0d2dce","btn_outline_secondary_color":"#0d2dce","btn_outline_secondary_border_color":"#0d2dce","btn_outline_secondary_accent_color":"#ffffff","btn_outline_secondary_accent_background":"#0d2dce","btn_outline_secondary_accent_border_color":"#0d2dce"}},"black_white":{"label":"Black & White","keys":{"palette_branding_primary":"#000000","palette_branding_secondary":"#ffffff","palette_primary":"#000000","palette_secondary":"#ffffff","palette_success":"#2bff00","palette_info":"#00ccff","palette_warning":"#e6b400","palette_danger":"#ff0033","palette_light":"#f2f2f2","palette_dark":"#545454","palette_white":"#ffffff","palette_black":"#000000","base_font_size":"1rem","base_font_weight":"400","base_font_family":"Roboto","base_font_line_height":"1.5","links_color":"#000000","links_accent_color":"#545454","body_color":"#000000","body_background":"#ffffff","layout_content_max_width":"1540px","layout_spacing":"1.5rem","header_links_font_size":"1rem","header_links_font_family":"Roboto","header_links_font_weight":"700","header_links_color":"#000000","header_links_accent_color":"#545454","header_top_color":"#ffffff","header_top_background":"#000000","header_top_links_font_size":"1rem","header_top_links_font_family":"Roboto","header_top_links_font_weight":"700","header_top_links_decoration":"underline","header_top_links_color":"#ffffff","header_top_links_accent_color":"#ffffff","breadcrumb_font_size":"1rem","breadcrumb_font_family":"Arima","breadcrumb_padding_x":"1rem","breadcrumb_padding_y":"1rem","breadcrumb_divider":"''/''","breadcrumb_color":"#000000","breadcrumb_background":"#f2f2f2","breadcrumb_accent_color":"#545454","headings_font_family":"Roboto","headings_font_weight":"700","h1_font_size_lg":"4.5rem","h2_font_size_lg":"4rem","h3_font_size_lg":"3rem","h4_font_size_lg":"2rem","h5_font_size_lg":"1.5rem","btn_border_width":"3px","btn_border_radius":"0rem","btn_font_weight":"700","btn_padding_x":"1.5rem","btn_padding_y":"1rem","btn_line_height":"1.5","btn_font_family":"Roboto","btn_font_size":"1rem","btn_primary_color":"#ffffff","btn_primary_background":"#000000","btn_primary_border_color":"#000000","btn_primary_accent_color":"#ffffff","btn_primary_accent_background":"#000000","btn_primary_accent_border_color":"#000000","btn_outline_primary_color":"#000000","btn_outline_primary_border_color":"#000000","btn_outline_primary_accent_color":"#ffffff","btn_outline_primary_accent_background":"#000000","btn_outline_primary_accent_border_color":"#000000","btn_secondary_color":"#ffffff","btn_secondary_background":"#545454","btn_secondary_border_color":"#545454","btn_secondary_accent_color":"#545454","btn_secondary_accent_background":"#ffffff","btn_secondary_accent_border_color":"#ffffff","btn_outline_secondary_color":"#545454","btn_outline_secondary_border_color":"#545454","btn_outline_secondary_accent_color":"#ffffff","btn_outline_secondary_accent_background":"#545454","btn_outline_secondary_accent_border_color":"#545454"}},"preset_4":{"label":"Preset 4","keys":{"palette_branding_primary":"#009cde","palette_branding_secondary":"#ffc423","palette_light":"#ccedf9","palette_dark":"#12285f","palette_white":"#ffffff","palette_black":"#000000","header_links_font_size":"1.2rem","header_links_font_weight":"600","footer_background":"#000000","footer_top_color":"#ffffff"}},"ixp_v_1":{"label":"IXP V1","keys":{"palette_branding_primary":"#009cde","palette_branding_secondary":"#ffc423","palette_light":"#ccedf9","palette_dark":"#12285f","palette_white":"#ffffff","palette_black":"#000000","header_links_font_size":"1.2rem","header_links_font_weight":"600","footer_background":"#000000","footer_top_color":"#ffffff"}}}'
 palette_branding_primary: '#009cde'
-palette_branding_secondary: '#ffc423'
-palette_primary: null
+palette_branding_secondary: '#f46351'
+palette_primary: '#12285f'
 palette_secondary: null
 palette_success: null
 palette_info: null
@@ -23,15 +24,15 @@ palette_light: '#ccedf9'
 palette_dark: '#12285f'
 palette_white: '#ffffff'
 palette_black: '#000000'
-base_font_size: ''
-base_font_weight: ''
-base_font_family: ''
-base_font_line_height: ''
-body_color: null
-body_background: null
-headings_font_family: ''
+base_font_size: 18px
+base_font_weight: '400'
+base_font_family: 'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
+base_font_line_height: '1.7'
+body_color: '#12285f'
+body_background: '#ffffff'
+headings_font_family: inherit
 headings_font_weight: ''
-headings_color: null
+headings_color: '#000000'
 headings_decoration: ''
 h1_font_size: ''
 h1_font_size_lg: ''
@@ -39,10 +40,10 @@ h1_font_family: ''
 h1_font_weight: ''
 h1_color: null
 h1_decoration: ''
-h2_font_size: ''
-h2_font_size_lg: ''
+h2_font_size: 2rem
+h2_font_size_lg: 2.5rem
 h2_font_family: ''
-h2_font_weight: ''
+h2_font_weight: '700'
 h2_color: null
 h2_decoration: ''
 h3_font_size: ''
@@ -116,47 +117,47 @@ breadcrumb_padding_x: ''
 breadcrumb_padding_y: ''
 breadcrumb_margin_y: ''
 breadcrumb_divider: ''
-breadcrumb_color: null
+breadcrumb_color: '#999999'
 breadcrumb_background: null
 breadcrumb_accent_color: null
-links_color: null
-links_accent_color: null
-links_decoration: ''
+links_color: '#009cde'
+links_accent_color: '#f46351'
+links_decoration: underline
 links_font_family: ''
-links_font_weight: ''
+links_font_weight: '600'
 header_links_font_size: 1.2rem
 header_top_links_font_size: ''
-header_links_color: null
-header_links_accent_color: null
-header_links_decoration: ''
+header_links_color: '#12285f'
+header_links_accent_color: '#009cde'
+header_links_decoration: none
 header_links_font_family: ''
 header_links_font_weight: '600'
-footer_links_color: null
-footer_links_accent_color: null
+footer_links_color: '#009cde'
+footer_links_accent_color: '#f46351'
 footer_links_decoration: ''
 footer_links_font_family: ''
-footer_links_font_weight: ''
-footer_links_font_size: ''
-layout_content_max_width: ''
-layout_global_max_width: ''
-layout_spacing: ''
-header_static: false
-header_color: null
-header_background: null
+footer_links_font_weight: '400'
+footer_links_font_size: 1rem
+layout_content_max_width: 80vw
+layout_global_max_width: 100vw
+layout_spacing: 4rem
+header_static: 1
+header_color: '#12285f'
+header_background: '#ffffff'
 header_opacity: ''
 header_height: ''
-header_z_index: null
-footer_padding_y: ''
-footer_color: null
+header_z_index: ''
+footer_padding_y: 2rem
+footer_color: '#999999'
 footer_background: '#000000'
 header_top_color: null
-header_top_background: null
+header_top_background: '#ffffff'
 header_top_links_font_family: ''
 header_top_links_font_weight: ''
 header_top_links_decoration: ''
 header_top_links_color: null
 header_top_links_accent_color: null
-footer_top_color: '#ffffff'
+footer_top_color: null
 footer_top_background: null
 footer_top_links_color: null
 footer_top_links_accent_color: null
@@ -182,23 +183,23 @@ btn_font_size_sm: ''
 btn_font_size_lg: ''
 btn_disabled_opacity: ''
 btn_shadow: ''
-btn_primary_color: null
-btn_primary_background: null
-btn_primary_border_color: null
-btn_primary_accent_color: null
-btn_primary_accent_background: null
-btn_primary_accent_border_color: null
+btn_primary_color: '#000000'
+btn_primary_background: '#f46351'
+btn_primary_border_color: '#f46351'
+btn_primary_accent_color: '#ffffff'
+btn_primary_accent_background: '#12285f'
+btn_primary_accent_border_color: '#12285f'
 btn_outline_primary_color: null
 btn_outline_primary_border_color: null
 btn_outline_primary_accent_color: null
 btn_outline_primary_accent_background: null
 btn_outline_primary_accent_border_color: null
-btn_secondary_color: null
-btn_secondary_background: null
-btn_secondary_border_color: null
-btn_secondary_accent_color: null
-btn_secondary_accent_background: null
-btn_secondary_accent_border_color: null
+btn_secondary_color: '#ffffff'
+btn_secondary_background: '#009cde'
+btn_secondary_border_color: '#009cde'
+btn_secondary_accent_color: '#ffffff'
+btn_secondary_accent_background: '#12285f'
+btn_secondary_accent_border_color: '#12285f'
 btn_outline_secondary_color: null
 btn_outline_secondary_border_color: null
 btn_outline_secondary_accent_color: null
@@ -206,9 +207,9 @@ btn_outline_secondary_accent_background: null
 btn_outline_secondary_accent_border_color: null
 btn_link_color: null
 btn_link_accent_color: null
-form_element_floating_label: false
-form_element_switches: false
-form_element_inline: false
+form_element_floating_label: 1
+form_element_switches: 0
+form_element_inline: 1
 form_element_margin_bottom: ''
 form_input_border_width: ''
 form_input_border_radius: ''
@@ -227,7 +228,7 @@ form_input_font_size_lg: ''
 form_input_shadow: ''
 form_input_color: null
 form_input_placeholder_color: null
-form_input_background: null
+form_input_background: '#ffffff'
 form_input_border_color: null
 form_input_disabled_background: null
 form_input_accent_color: null
@@ -239,4 +240,4 @@ form_label_font_weight: ''
 form_label_line_height: ''
 form_label_margin_bottom: ''
 example_font_size: ''
-example_color: null
+example_color: '#12285f'
