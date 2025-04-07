@@ -1,0 +1,20 @@
+uuid: 190f85ad-1d21-44d0-83ba-52e1ee08c626
+langcode: en
+status: true
+dependencies:
+  theme:
+    - artisan_starterkit
+_core:
+  default_config_hash: oXLAqsDyb79xj78YSTuvLtSoto2OImPquupLSnTk7ac
+id: artisan_starterkit_primary_admin_actions
+theme: artisan_starterkit
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: a215f143-17d5-4f49-82d1-cce9d5dd6db1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.title_with_text
+    - field.storage.block_content.field_title
+  module:
+    - text
+id: block_content.title_with_text.field_title
+field_name: field_title
+entity_type: block_content
+bundle: title_with_text
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

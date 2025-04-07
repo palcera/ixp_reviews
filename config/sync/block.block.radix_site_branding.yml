@@ -1,0 +1,25 @@
+uuid: a76cdc25-4f1f-4e54-b33a-7fc0e33f6008
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - radix
+_core:
+  default_config_hash: r5KPw_v-gSfirwW7dAF2UcfN0KcWojSHvY-02CfAptE
+id: radix_site_branding
+theme: radix
+region: navbar_branding
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

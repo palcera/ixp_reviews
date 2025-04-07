@@ -1,0 +1,8 @@
+uuid: d50a99fa-f9b4-4502-854a-487c8a04c664
+langcode: en
+status: true
+dependencies: {  }
+id: logo
+label: Logo
+revision: true
+description: 'Logo for site and Partner logos'

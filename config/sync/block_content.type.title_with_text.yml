@@ -1,0 +1,8 @@
+uuid: 4c63f61c-41d9-4aa4-8b0c-fdd241cd5860
+langcode: en
+status: true
+dependencies: {  }
+id: title_with_text
+label: 'Title with Text'
+revision: false
+description: 'Title and paragraph text below it.'

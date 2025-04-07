@@ -1,0 +1,22 @@
+uuid: 237ceecf-d85f-41ea-bc5b-b293a8d0b7a2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - artisan_starterkit
+_core:
+  default_config_hash: aGm6GaJZFuAbG8mIyxPvoCbpHGZkKMu1bpAkApF7RuA
+id: artisan_starterkit_content
+theme: artisan_starterkit
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

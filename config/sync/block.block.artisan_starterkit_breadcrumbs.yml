@@ -1,0 +1,26 @@
+uuid: 5416de31-776c-4642-be71-6ec844c44766
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - artisan_starterkit
+_core:
+  default_config_hash: Yz-508PvVCdt5s_5sZQcsi4RSW1jjTMi1Zcoh0nURns
+id: artisan_starterkit_breadcrumbs
+theme: artisan_starterkit
+region: content
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/user/*'

@@ -2,7 +2,7 @@ _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: en
 uuid: 57a5f9bc-f025-4523-8fb0-8086343fc5d1
-name: 'IXP Registration'
+name: 'IXP Program Registration'
 mail: admin@drupal-ixp.site
 slogan: 'The site to register your IXP Engagement'
 page:
