@@ -1,4 +1,4 @@
-uuid: b0085748-9e58-4db1-83fc-e913b60a8371
+uuid: 576b8dfa-e7e6-4d9c-8c43-9b249467e2ec
 langcode: en
 status: true
 dependencies:
@@ -12,8 +12,8 @@ _core:
   default_config_hash: B5Wg45XJdDLYsGt6-6nyiXou502VSmHFp17hnUZc00E
 id: ixp_artisan_user_menu
 theme: ixp_artisan
-region: secondary_menu
-weight: -5
+region: header_top
+weight: 0
 provider: null
 plugin: 'system_menu_block:account'
 settings:

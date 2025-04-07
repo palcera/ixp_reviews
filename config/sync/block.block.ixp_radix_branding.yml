@@ -1,0 +1,25 @@
+uuid: c8d1f6bf-db5a-4654-bdf4-c3449800796b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ixp_radix
+_core:
+  default_config_hash: x97-eEvo0UXxElLGyh0HV2XovmfWgjiKdqasagn73PE
+id: ixp_radix_branding
+theme: ixp_radix
+region: navbar_branding
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

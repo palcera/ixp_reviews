@@ -1,6 +1,6 @@
-uuid: 85722672-ca1a-4a46-91be-12feb8ecf0e7
+uuid: ea7b56a8-4f74-4d26-aee8-da79959bcc85
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.footer
@@ -13,7 +13,7 @@ _core:
 id: ixp_artisan_footer_menu
 theme: ixp_artisan
 region: footer_top
-weight: -4
+weight: 0
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

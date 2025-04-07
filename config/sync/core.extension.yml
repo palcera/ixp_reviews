@@ -6,7 +6,6 @@ module:
   admin_toolbar_tools: 0
   announcements_feed: 0
   antibot: 0
-  artisan_styleguide: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -111,4 +110,7 @@ theme:
   gin: 0
   artisan: 0
   ixp_artisan: 0
+  artisan_starterkit: 0
+  radix: 0
+  ixp_radix: 0
 profile: standard

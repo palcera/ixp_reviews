@@ -1,11 +1,4 @@
 _core:
   default_config_hash: 9KUf4Qxs6W81x7hZM51_Hpq3qTWhznHSznF5P12JFhg
 names:
-  - block.block.ixp_radix_branding
-  - block.block.ixp_radix_breadcrumbs
-  - block.block.ixp_radix_content
-  - block.block.ixp_radix_footer
-  - block.block.ixp_radix_local_actions
   - block.block.ixp_radix_main_menu
-  - block.block.ixp_radix_messages
-  - block.block.ixp_radix_page_title

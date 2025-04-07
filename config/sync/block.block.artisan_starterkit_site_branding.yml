@@ -1,15 +1,17 @@
-uuid: e391d0d0-1dd5-47ea-bd1c-f1b97f2e371a
+uuid: 1e2f21c3-0a5a-44ef-a519-2f9e501038f4
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - ixp_artisan
-id: ixp_artisan_sitebranding
-theme: ixp_artisan
-region: footer_top
-weight: -6
+    - artisan_starterkit
+_core:
+  default_config_hash: nhoA4DY7AykicryzJawysiWPOVvFXJz-ZXpB-kGps18
+id: artisan_starterkit_site_branding
+theme: artisan_starterkit
+region: branding
+weight: 0
 provider: null
 plugin: system_branding_block
 settings:

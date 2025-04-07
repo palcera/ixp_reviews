@@ -1,0 +1,25 @@
+uuid: e7a841a6-7436-4f7a-9a9f-d801c55990dd
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:90aa033c-bd10-4272-a7fa-31ad61aaccd2'
+  module:
+    - block_content
+  theme:
+    - ixp_radix
+id: ixp_radix_copyrighttext
+theme: ixp_radix
+region: footer
+weight: -4
+provider: null
+plugin: 'block_content:90aa033c-bd10-4272-a7fa-31ad61aaccd2'
+settings:
+  id: 'block_content:90aa033c-bd10-4272-a7fa-31ad61aaccd2'
+  label: 'Copyright Text'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

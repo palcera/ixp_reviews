@@ -1,0 +1,22 @@
+uuid: 9ec73639-e16d-463e-b310-40d16519b357
+langcode: en
+status: true
+dependencies:
+  theme:
+    - artisan_starterkit
+_core:
+  default_config_hash: ywZOm0R-tjKgcXGfj2WgXoYSC1fFTKeVJ6qba0aXM7w
+id: artisan_starterkit_secondary_local_tasks
+theme: artisan_starterkit
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

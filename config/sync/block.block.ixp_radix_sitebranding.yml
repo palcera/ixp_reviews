@@ -1,0 +1,23 @@
+uuid: 24589a2e-c4b5-4176-8893-5790841c8020
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ixp_radix
+id: ixp_radix_sitebranding
+theme: ixp_radix
+region: footer
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }
