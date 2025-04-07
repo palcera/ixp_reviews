@@ -83,6 +83,7 @@
         "drupal/sitemap": "^2.0",
         "drupal/smart_date": "^4.2",
         "drupal/stage_file_proxy": "^3.1",
+        "drupal/structure_sync": "^2.0",
         "drupal/upgrade_status": "^4.3",
         "drupal/user_current_paths": "^2.0",
         "drush/drush": "^13",

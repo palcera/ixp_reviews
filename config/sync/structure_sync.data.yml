@@ -1,0 +1,114 @@
+blocks:
+  -
+    info: 'Copyright Text'
+    langcode: en
+    uuid: 90aa033c-bd10-4272-a7fa-31ad61aaccd2
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p class="text-align-center">© 2025 Drupal IXP Program. All rights reserved • Powered by <a href="https://drupal.org/">Drupal</a> • Hosting provided by <a href="https://digital.esteemed.io/">Esteemed</a></p>'
+          summary: ''
+          format: full_html
+  -
+    info: 'Thank you to our Partners'
+    langcode: en
+    uuid: 56c26f29-dd04-4b9e-987c-32b45383e8ca
+    bundle: title_with_text
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body: {  }
+      field_title:
+        -
+          value: '<h2 class="text-align-center">Thank you to our Partners</h2>'
+          format: full_html
+  -
+    info: 'News and Case Studies'
+    langcode: en
+    uuid: ce207ecc-8b26-4c00-ba77-f1451ff2cf36
+    bundle: title_with_text
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body: {  }
+      field_title:
+        -
+          value: '<h2>News and Case Studies</h2>'
+          format: full_html
+  -
+    info: "IXP: Building Drupal's Future Talent"
+    langcode: en
+    uuid: e53c5e43-5ebe-4c31-8037-4a808486de72
+    bundle: title_with_text
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p class="text-align-center" style="font-size:1.5rem;">The IXP Program incentivizes organizations to hire new Drupal talent by offering 250 contribution credits for each successful engagement, while providing structured mentorship and real-world experience for newcomers. For comprehensive information about the program, eligibility requirements, and benefits lease visit the official IXP initiative page at <a href="https://www.drupal.org/ixp">www.drupal.org/ixp</a></p>'
+          summary: ''
+          format: full_html
+      field_title:
+        -
+          value: '<h2 class="text-align-center">IXP: Building Drupal''s Future Talent</h2>'
+          format: full_html
+  -
+    info: 'Hero Text'
+    langcode: en
+    uuid: abbc4c9e-6ad3-41a1-8e5f-044f73925587
+    bundle: title_with_text
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p class="p1" style="font-size:1.75rem;">Where organizations and inexperienced Drupal professionals manage their participation in this community initiative.</p>'
+          summary: ''
+          format: full_html
+      field_title:
+        -
+          value: '<h2 class="h2">Welcome to the IXP Program Application Portal</h2>'
+          format: full_html
+menus:
+  -
+    menu_name: account
+    title: 'My Company'
+    parent: null
+    uri: 'internal:/user/current/groups'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: en
+    uuid: 20c57d1f-e21d-4f06-9b34-bacadef1cd6b
+    options: {  }
+  -
+    menu_name: main
+    title: 'IXP Program Info Page'
+    parent: null
+    uri: 'https://www.drupal.org/ixp'
+    link_title: ''
+    description: 'Go to the Drupal.org IXP Program page'
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: en
+    uuid: d24f0c96-e4a4-4b12-b148-5c611a7ae8af
+    options: {  }
+  -
+    menu_name: account
+    title: 'IXP Program Info Page'
+    parent: null
+    uri: 'https://www.drupal.org/ixp'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 90adc14b-88e7-49d3-b8f2-6b9e4f38bd62
+    options: {  }
