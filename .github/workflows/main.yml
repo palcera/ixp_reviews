@@ -52,7 +52,7 @@ jobs:
       - name: Compiling Artisan themes/custom/ixp_artisan
         run: |
           echo "Compiling Artisan themes/custom/ixp_radix..."
-          cd deploy/web/themes/custom/ixp_radiz
+          cd deploy/web/themes/custom/ixp_radix
           npm install
           npm run production
           cd ../../../../..
