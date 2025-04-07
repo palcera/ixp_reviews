@@ -11,7 +11,7 @@ _core:
 id: ixp_radix_page_title
 theme: ixp_radix
 region: header
-weight: -2
+weight: -1
 provider: null
 plugin: page_title_block
 settings:

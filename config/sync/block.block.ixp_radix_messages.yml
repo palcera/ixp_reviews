@@ -1,0 +1,22 @@
+uuid: cdf21edc-26f3-44a3-8a81-2136887932ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ixp_radix
+_core:
+  default_config_hash: 3mpaEFaLKtBmLGjPd8AgJ__3Gaq2cymI8icHoVuStn4
+id: ixp_radix_messages
+theme: ixp_radix
+region: header
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
