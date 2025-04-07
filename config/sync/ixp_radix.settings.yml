@@ -7,4 +7,4 @@ features:
   node_user_picture: true
 logo:
   path: 'public://drupal-ixp-program-logo.svg'
-  use_default: false
+  use_default: true
