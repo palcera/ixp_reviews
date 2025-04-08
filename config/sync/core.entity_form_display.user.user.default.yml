@@ -68,6 +68,23 @@ content:
             effect_options: {  }
             selector: ''
             regex: company_admin
+        5222c68b-6157-4ffd-9ff0-f6832141bb12:
+          entity_type: user
+          bundle: user
+          dependee: field_role
+          settings:
+            state: required
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 6
+            value: ''
+            values: {  }
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+            regex: company_admin
   field_drupal_slack:
     type: string_textfield
     weight: 11
