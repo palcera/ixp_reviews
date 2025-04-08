@@ -12,6 +12,7 @@ dependencies:
     - contact
     - file
     - filter
+    - legal
     - media
     - node
     - search
@@ -37,5 +38,6 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view Terms and Conditions'
   - 'view media'
   - 'view the administration theme'

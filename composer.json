@@ -58,6 +58,7 @@
         "drupal/http_cache_control": "^2.1",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/layout_builder_blocks": "^1.1",
+        "drupal/legal": "^3.0",
         "drupal/link_attributes": "^2.1",
         "drupal/linkit": "^7.0@alpha",
         "drupal/login_redirect_per_role": "^1.10",
