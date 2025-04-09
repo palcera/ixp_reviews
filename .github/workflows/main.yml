@@ -64,6 +64,8 @@ jobs:
           mkdir -p deploy/config
           [ -d deploy/config/sync ] && rm -rf deploy/config/sync
           cp -r config/sync deploy/config/sync
+          [ -d deploy/config/envs ] && rm -rf deploy/config/envs
+          cp -r config/envs deploy/config/envs
 
       # Update settings.php
       - name: Update settings.php
