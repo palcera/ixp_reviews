@@ -9,7 +9,7 @@ weight: 0
 stackable: false
 no_patching: false
 storage: folder
-folder: ../envs/local
+folder: ../config/envs/local
 module:
   stage_file_proxy: 0
 theme: {  }
