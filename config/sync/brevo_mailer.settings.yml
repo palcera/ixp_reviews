@@ -1,0 +1,5 @@
+debug_mode: true
+test_mode: false
+format_filter: basic_html
+use_queue: false
+use_theme: false

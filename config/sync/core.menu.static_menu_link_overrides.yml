@@ -14,20 +14,20 @@ definitions:
     expanded: false
     enabled: false
   user__page:
+    menu_name: account
+    parent: ''
     weight: -49
-    menu_name: account
-    parent: ''
-    enabled: true
     expanded: false
+    enabled: true
   user_current_paths__edit_redirect:
-    weight: -48
     menu_name: account
     parent: ''
+    weight: -48
     expanded: false
     enabled: true
   user__logout:
-    weight: -46
     menu_name: account
     parent: ''
+    weight: -46
     expanded: false
     enabled: true

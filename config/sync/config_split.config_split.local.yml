@@ -1,0 +1,17 @@
+uuid: 77425c24-cbbc-4f42-b799-b7fb3a546d49
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: Local
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../envs/local
+module:
+  stage_file_proxy: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }
