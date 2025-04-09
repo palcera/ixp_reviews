@@ -10,10 +10,7 @@ stackable: false
 no_patching: false
 storage: folder
 folder: ../config/envs/prod
-module:
-  brevo: 0
-  brevo_mailer: 0
-  mailsystem: 0
+module: {  }
 theme: {  }
 complete_list: {  }
 partial_list: {  }
