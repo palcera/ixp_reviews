@@ -886,4 +886,4 @@ if (file_exists($app_root . '/' . $site_path . '/settings.deploy.php')) {
    include $app_root . '/' . $site_path . '/settings.local.php';
  }
 
- $settings['config_exclude_modules'] = ['brevo','mailsystem'];
+ $settings['config_exclude_modules'] = ['brevo','brevo_mailer', 'mailsystem'];
