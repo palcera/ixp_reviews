@@ -98,7 +98,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a class=\"button button-action btn btn-primary\" href=\"/group/{{ id }}/content/create/group_node:job_posting\"> Request a coupon for Job @ drupal.org</a>\r\n\r\n<a class=\"button button-action btn btn-primary\" href=\"/group/{{ id }}/content/create/group_node:ixp_engagement\"> Create an engagement</a>\r\n\r\n<a class=\"button button-action btn btn-primary\" href=\"/group/{{ id }}/content/create/group_node:progress_report\"> Create a progress report</a>\r\n\r\n<a class=\"button button-action btn btn-primary\" href=\"/group/{{ id }}/content/create/group_node:final_report_ixp\"> Create a final report</a>"
+            text: "<a class=\"button button-action btn btn-info\" href=\"/group/{{ id }}/content/create/group__membership\"> Add a member or IXP user</a>\r\n\r\n<a class=\"button button-action btn btn-primary\" href=\"/group/{{ id }}/content/create/group_node:job_posting\"> Request a coupon for Job @ drupal.org</a>\r\n\r\n<a class=\"button button-action btn btn-primary\" href=\"/group/{{ id }}/content/create/group_node:ixp_engagement\"> Create an engagement</a>\r\n\r\n<a class=\"button button-action btn btn-primary\" href=\"/group/{{ id }}/content/create/group_node:progress_report\"> Create a progress report</a>\r\n\r\n<a class=\"button button-action btn btn-primary\" href=\"/group/{{ id }}/content/create/group_node:final_report_ixp\"> Create a final report</a>\r\n\r\n"
             make_link: false
             path: ''
             absolute: false
