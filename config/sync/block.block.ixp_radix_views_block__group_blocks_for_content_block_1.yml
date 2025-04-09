@@ -1,0 +1,25 @@
+uuid: c499bd21-b411-460c-a4d9-c7a6de261e1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_blocks_for_content
+  module:
+    - views
+  theme:
+    - ixp_radix
+id: ixp_radix_views_block__group_blocks_for_content_block_1
+theme: ixp_radix
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:group_blocks_for_content-block_1'
+settings:
+  id: 'views_block:group_blocks_for_content-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

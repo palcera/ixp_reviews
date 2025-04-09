@@ -1,0 +1,33 @@
+uuid: d4c28e3c-386b-41be-8f47-c2f2e33df40b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.group_members_company
+  module:
+    - group
+    - views
+  theme:
+    - ixp_radix
+id: ixp_radix_views_block__group_members_company_block_1
+theme: ixp_radix
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:group_members_company-block_1'
+settings:
+  id: 'views_block:group_members_company-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  group_type:
+    id: group_type
+    group_types:
+      company: company
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'
