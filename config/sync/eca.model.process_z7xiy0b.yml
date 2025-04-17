@@ -1,0 +1,61 @@
+uuid: 1f9b4992-5483-4af0-94a6-c0a26bc27fbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - eca.eca.process_z7xiy0b
+id: process_z7xiy0b
+label: 'Reset IXP Case number to 0 - Temp'
+tags:
+  - untagged
+documentation: ''
+filename: ''
+modeldata: |
+  <?xml version="1.0" encoding="UTF-8"?>
+  <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:qa="http://some-company/schema/bpmn/qa" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+    <bpmn2:process id="Process_z7XIy0B" name="Reset IXP Case number to 0 - Temp" isExecutable="true">
+      <bpmn2:startEvent id="Event_14a3vpy" camunda:modelerTemplate="org.drupal.event.eca_base:eca_custom">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_base:eca_custom" />
+          </camunda:properties>
+          <camunda:field name="event_id">
+            <camunda:string>reset_case_number</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_0u6ndwu</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:task id="Activity_0o9ohyf" camunda:modelerTemplate="org.drupal.action.eca_state_write">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_state_write" />
+          </camunda:properties>
+          <camunda:field name="key">
+            <camunda:string>ixp-case</camunda:string>
+          </camunda:field>
+          <camunda:field name="value">
+            <camunda:string>0</camunda:string>
+          </camunda:field>
+          <camunda:field name="use_yaml">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0u6ndwu</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_0u6ndwu" sourceRef="Event_14a3vpy" targetRef="Activity_0o9ohyf" />
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="sid-17e6be3d-6b2d-447a-ae3a-bff4946a33e5">
+      <bpmndi:BPMNPlane id="sid-bb09ff09-3d40-4a60-9591-67d59619f0bf" bpmnElement="Process_z7XIy0B">
+        <bpmndi:BPMNShape id="Event_14a3vpy_di" bpmnElement="Event_14a3vpy">
+          <dc:Bounds x="172" y="292" width="36" height="36" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0o9ohyf_di" bpmnElement="Activity_0o9ohyf">
+          <dc:Bounds x="370" y="270" width="100" height="80" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNEdge id="Flow_0u6ndwu_di" bpmnElement="Flow_0u6ndwu">
+          <di:waypoint x="208" y="310" />
+          <di:waypoint x="370" y="310" />
+        </bpmndi:BPMNEdge>
+      </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+  </bpmn2:definitions>

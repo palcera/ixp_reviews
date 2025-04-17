@@ -1,0 +1,81 @@
+uuid: ce4cfc10-f936-44bf-83c4-0071a983a4d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - eca.eca.process_qwopdey
+id: process_qwopdey
+label: 'Show current case Number'
+tags:
+  - untagged
+documentation: ''
+filename: ''
+modeldata: |
+  <?xml version="1.0" encoding="UTF-8"?>
+  <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:qa="http://some-company/schema/bpmn/qa" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+    <bpmn2:process id="Process_qwOpdEy" name="Show current case Number" isExecutable="true">
+      <bpmn2:startEvent id="Event_1qut783" camunda:modelerTemplate="org.drupal.event.eca_base:eca_custom">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_base:eca_custom" />
+          </camunda:properties>
+          <camunda:field name="event_id">
+            <camunda:string>show_case_number</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_0iuiamp</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:task id="Activity_13lw5fu" camunda:modelerTemplate="org.drupal.action.eca_state_read">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_state_read" />
+          </camunda:properties>
+          <camunda:field name="key">
+            <camunda:string>ixp-case</camunda:string>
+          </camunda:field>
+          <camunda:field name="token_name">
+            <camunda:string>current-case-number</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0iuiamp</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_0ke971q</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_0iuiamp" sourceRef="Event_1qut783" targetRef="Activity_13lw5fu" />
+      <bpmn2:task id="Activity_1y89npc" camunda:modelerTemplate="org.drupal.action.action_message_action">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="action_message_action" />
+          </camunda:properties>
+          <camunda:field name="message">
+            <camunda:string>The current case number is [current-case-number]</camunda:string>
+          </camunda:field>
+          <camunda:field name="replace_tokens">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0ke971q</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_0ke971q" sourceRef="Activity_13lw5fu" targetRef="Activity_1y89npc" />
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="sid-fa1d21c5-0e7f-4710-9a1c-7123b22c1a59">
+      <bpmndi:BPMNPlane id="sid-b440ef97-8280-4847-ba39-e44db4a8a402" bpmnElement="Process_qwOpdEy">
+        <bpmndi:BPMNShape id="Event_1qut783_di" bpmnElement="Event_1qut783">
+          <dc:Bounds x="212" y="252" width="36" height="36" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_13lw5fu_di" bpmnElement="Activity_13lw5fu">
+          <dc:Bounds x="300" y="230" width="100" height="80" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_1y89npc_di" bpmnElement="Activity_1y89npc">
+          <dc:Bounds x="460" y="230" width="100" height="80" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNEdge id="Flow_0iuiamp_di" bpmnElement="Flow_0iuiamp">
+          <di:waypoint x="248" y="270" />
+          <di:waypoint x="300" y="270" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0ke971q_di" bpmnElement="Flow_0ke971q">
+          <di:waypoint x="400" y="270" />
+          <di:waypoint x="460" y="270" />
+        </bpmndi:BPMNEdge>
+      </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+  </bpmn2:definitions>
