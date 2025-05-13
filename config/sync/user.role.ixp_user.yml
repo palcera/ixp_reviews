@@ -2,7 +2,12 @@ uuid: 624ccb4a-150f-48e3-a794-e975d287de1f
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.restricted_html
+    - node.type.final_report_ixp
+    - node.type.progress_report
   module:
+    - filter
     - group
     - node
 id: ixp_user
@@ -14,4 +19,9 @@ permissions:
   - 'access user profiles'
   - 'cancel account'
   - 'change own username'
+  - 'create final_report_ixp content'
+  - 'create progress_report content'
+  - 'delete own final_report_ixp content'
+  - 'delete own progress_report content'
+  - 'use text format restricted_html'
   - 'view own unpublished content'

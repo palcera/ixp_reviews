@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_assigned_tasks
     - filter.format.basic_html
+    - filter.format.restricted_html
     - node.type.progress_report
   module:
     - text
@@ -21,4 +22,5 @@ default_value_callback: ''
 settings:
   allowed_formats:
     - basic_html
+    - restricted_html
 field_type: text_long

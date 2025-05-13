@@ -3,15 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.restricted_html
     - node.type.coupons
+    - node.type.final_report_ixp
     - node.type.ixp_engagement
     - node.type.job_posting
+    - node.type.progress_report
     - workflows.workflow.ixp_approval_process
     - workflows.workflow.job_post_workflow
   module:
     - comment
     - contact
     - content_moderation
+    - filter
     - group
     - node
     - system
@@ -27,11 +31,15 @@ permissions:
   - 'access user profiles'
   - 'create company group'
   - 'create coupons content'
+  - 'create final_report_ixp content'
   - 'create ixp_engagement content'
   - 'create job_posting content'
+  - 'create progress_report content'
   - 'delete own coupons content'
+  - 'delete own final_report_ixp content'
   - 'delete own ixp_engagement content'
   - 'delete own job_posting content'
+  - 'delete own progress_report content'
   - 'edit own comments'
   - 'edit own coupons content'
   - 'edit own ixp_engagement content'
@@ -42,4 +50,5 @@ permissions:
   - 'use ixp_approval_process transition ready_to_review'
   - 'use job_post_workflow transition create_new_draft'
   - 'use job_post_workflow transition publish'
+  - 'use text format restricted_html'
   - 'view own unpublished content'

@@ -77,7 +77,6 @@ permissions:
   - 'use ixp_approval_process transition ready_to_review'
   - 'use job_post_workflow transition create_new_draft'
   - 'use job_post_workflow transition needs_coupon'
-  - 'use job_post_workflow transition ready_to_publish'
   - 'use moderation dashboard'
   - 'use moderation sidebar'
   - 'use text format basic_html'
