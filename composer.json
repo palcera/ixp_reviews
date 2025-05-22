@@ -165,9 +165,7 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/group": {
-                "Issue 3494447: Undefined function field_ui_entity_operation": "https://git.drupalcode.org/project/group/-/merge_requests/204.patch"
-            }        },
+	},
         "drupal-lenient": {
             "allowed-list": [
             ]

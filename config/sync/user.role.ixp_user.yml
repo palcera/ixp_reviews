@@ -5,8 +5,10 @@ dependencies:
   config:
     - filter.format.restricted_html
     - node.type.final_report_ixp
+    - node.type.ixp_engagement
     - node.type.progress_report
   module:
+    - content_moderation
     - filter
     - group
     - node
@@ -24,4 +26,7 @@ permissions:
   - 'delete own final_report_ixp content'
   - 'delete own progress_report content'
   - 'use text format restricted_html'
+  - 'view any unpublished content'
+  - 'view ixp_engagement revisions'
+  - 'view latest version'
   - 'view own unpublished content'

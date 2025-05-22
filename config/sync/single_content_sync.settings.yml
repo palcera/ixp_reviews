@@ -10,3 +10,5 @@ allowed_entity_types:
   taxonomy_term:
     - tags
 site_uuid_check: true
+import_directory_schema: temporary
+export_directory_schema: temporary

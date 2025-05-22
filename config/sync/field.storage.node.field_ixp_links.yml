@@ -14,21 +14,10 @@ settings:
     value:
       name: value
       type: uri
-      max_length: '255'
-      unsigned: 0
-      precision: '10'
-      scale: '2'
-      size: normal
-      datetime_type: datetime
     link_description:
       name: link_description
       type: string
-      max_length: '255'
-      unsigned: 0
-      precision: '10'
-      scale: '2'
-      size: normal
-      datetime_type: datetime
+      length: 255
 module: custom_field
 locked: false
 cardinality: 1

@@ -51,4 +51,6 @@ permissions:
   - 'use job_post_workflow transition create_new_draft'
   - 'use job_post_workflow transition publish'
   - 'use text format restricted_html'
+  - 'view any unpublished content'
+  - 'view latest version'
   - 'view own unpublished content'
