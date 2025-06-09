@@ -1,0 +1,52 @@
+uuid: b0ca1c75-4433-4b92-bc4c-f03d2c7d2f18
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.company
+    - user.role.ixp_reviewer
+id: company-ixp_reviewer
+label: 'IXP Reviewer'
+weight: 104
+admin: false
+scope: outsider
+global_role: ixp_reviewer
+group_type: company
+permissions:
+  - 'access content overview'
+  - 'access group_node overview'
+  - 'administer members'
+  - 'create group_node:final_report_ixp entity'
+  - 'create group_node:ixp_engagement entity'
+  - 'create group_node:job_posting entity'
+  - 'update any group_node:final_report_ixp entity'
+  - 'update any group_node:ixp_engagement entity'
+  - 'update any group_node:job_posting entity'
+  - 'update any group_node:progress_report entity'
+  - 'update own group_node:final_report_ixp entity'
+  - 'update own group_node:final_report_ixp relationship'
+  - 'update own group_node:ixp_engagement entity'
+  - 'update own group_node:ixp_engagement relationship'
+  - 'update own group_node:job_posting entity'
+  - 'update own group_node:progress_report entity'
+  - 'view all group revisions'
+  - 'view any unpublished group'
+  - 'view group'
+  - 'view group_membership relationship'
+  - 'view group_node:final_report_ixp entity'
+  - 'view group_node:final_report_ixp relationship'
+  - 'view group_node:ixp_engagement entity'
+  - 'view group_node:ixp_engagement relationship'
+  - 'view group_node:job_posting entity'
+  - 'view group_node:job_posting relationship'
+  - 'view group_node:progress_report entity'
+  - 'view latest group version'
+  - 'view own unpublished group'
+  - 'view own unpublished group_node:final_report_ixp entity'
+  - 'view own unpublished group_node:ixp_engagement entity'
+  - 'view own unpublished group_node:job_posting entity'
+  - 'view own unpublished group_node:progress_report entity'
+  - 'view unpublished group_node:final_report_ixp entity'
+  - 'view unpublished group_node:ixp_engagement entity'
+  - 'view unpublished group_node:job_posting entity'
+  - 'view unpublished group_node:progress_report entity'

@@ -1,4 +1,4 @@
-uuid: 091fb57d-6b34-4586-9c2b-e8c5d261b198
+uuid: 9f7db440-492f-4df8-a467-f2339c5914e5
 langcode: en
 status: true
 dependencies:
@@ -7,8 +7,8 @@ dependencies:
   module:
     - node
     - user
-id: duplicate_of_count_progress_reports
-label: 'Count final reports'
+id: count_final_reports
+label: 'Count Final Reports'
 module: views
 description: ''
 tag: ''
@@ -22,15 +22,15 @@ display:
     position: 0
     display_options:
       fields:
-        title:
-          id: title
+        nid:
+          id: nid
           table: node_field_data
-          field: title
+          field: nid
           relationship: none
-          group_type: count_distinct
+          group_type: count
           admin_label: ''
           entity_type: node
-          entity_field: title
+          entity_field: nid
           plugin_id: field
           label: ''
           exclude: false
@@ -72,11 +72,12 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: false
+          hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: number_integer
           settings:
-            link_to_entity: true
+            thousand_separator: ''
+            prefix_suffix: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -92,27 +93,12 @@ display:
           decimal: .
           format_plural: 0
           format_plural_string: !!binary MQNAY291bnQ=
-          prefix: '0'
+          prefix: ''
           suffix: ''
       pager:
-        type: mini
+        type: none
         options:
           offset: 0
-          pagination_heading_level: h4
-          items_per_page: 10
-          total_pages: null
-          id: 0
-          tags:
-            next: ››
-            previous: ‹‹
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -131,23 +117,7 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
+      sorts: {  }
       arguments:
         nid:
           id: nid
@@ -200,44 +170,11 @@ display:
           id: type
           table: node_field_data
           field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
           entity_type: node
           entity_field: type
           plugin_id: bundle
-          operator: in
           value:
             final_report_ixp: final_report_ixp
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       style:
         type: default
         options:
@@ -279,7 +216,6 @@ display:
       contexts:
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

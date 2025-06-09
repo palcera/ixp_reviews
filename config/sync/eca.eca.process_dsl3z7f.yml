@@ -13,7 +13,7 @@ id: process_dsl3z7f
 modeller: bpmn_io
 label: 'Set end date'
 version: ''
-weight: 0
+weight: -1
 events:
   Event_1g2n4eu:
     plugin: 'workflow:transition'

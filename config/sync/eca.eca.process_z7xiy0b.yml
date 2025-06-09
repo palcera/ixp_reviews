@@ -1,6 +1,6 @@
 uuid: 60957ba2-6b86-4a9f-8429-966a81e86688
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - eca_base
@@ -8,7 +8,7 @@ id: process_z7xiy0b
 modeller: bpmn_io
 label: 'Reset IXP Case number to 0 - Temp'
 version: ''
-weight: 0
+weight: -2
 events:
   Event_14a3vpy:
     plugin: 'eca_base:eca_custom'

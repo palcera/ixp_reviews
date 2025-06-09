@@ -165,6 +165,9 @@
             "drupal/core": "-p2"
         },
         "patches": {
+	    "drupal/core": {
+		 "Fix Ajax error on Views with aggregation (Issue #3344910)": "https://git.drupalcode.org/project/drupal/-/merge_requests/10181.patch"
+	    }
 	},
         "drupal-lenient": {
             "allowed-list": [

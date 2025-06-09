@@ -13,7 +13,7 @@ id: process_ggcsv0s
 modeller: bpmn_io
 label: 'Assign next state to job post'
 version: v0.1
-weight: 0
+weight: -5
 events:
   Event_09f5f0c:
     plugin: 'content_entity:insert'

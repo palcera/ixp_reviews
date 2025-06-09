@@ -19,7 +19,7 @@ id: process_y3vo1r0
 modeller: bpmn_io
 label: 'Find if there are enough progress reports'
 version: 'v. 1.1'
-weight: 0
+weight: -10
 events:
   Event_1cqxfhq:
     plugin: 'content_entity:view'
@@ -29,7 +29,7 @@ events:
     successors:
       -
         id: Gateway_0if952o
-        condition: Flow_029jj87
+        condition: ''
 conditions:
   Flow_1ytopfg:
     plugin: eca_current_user_role
@@ -90,14 +90,6 @@ conditions:
       case: false
       left: '[progress_reports_needed]'
       right: '[total_progress_reports]'
-      operator: equal
-      type: value
-  Flow_029jj87:
-    plugin: eca_content_form_display_mode
-    configuration:
-      negate: false
-      case: false
-      display_mode: default
       operator: equal
       type: value
 gateways:

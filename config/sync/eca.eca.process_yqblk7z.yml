@@ -14,7 +14,7 @@ id: process_yqblk7z
 modeller: bpmn_io
 label: 'Creating case number for IXP'
 version: v1
-weight: 0
+weight: -3
 events:
   Event_1lksjbv:
     plugin: 'content_entity:presave'

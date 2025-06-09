@@ -15,7 +15,7 @@ id: process_osuttwc
 modeller: bpmn_io
 label: 'Cpupon assignment'
 version: ''
-weight: 0
+weight: -4
 events:
   Event_17hkm17:
     plugin: 'workflow:transition'

@@ -3,6 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_company_created
+    - field.field.user.user.field_company_name
+    - field.storage.user.field_company_created
+    - field.storage.user.field_company_name
     - group.type.company
   module:
     - eca_content
@@ -13,7 +17,7 @@ id: process_cq6prln
 modeller: bpmn_io
 label: 'Add company when it does not exist'
 version: v0.1
-weight: 0
+weight: -8
 events:
   Event_1jzlu2x:
     plugin: 'content_entity:insert'

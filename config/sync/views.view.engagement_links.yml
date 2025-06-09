@@ -93,8 +93,8 @@ display:
                   title: ''
                   trim_length: 80
                   url_plain: false
-                  rel: false
-                  target: false
+                  rel: ''
+                  target: ''
               link_description:
                 format_type: string
                 wrappers:
@@ -174,7 +174,7 @@ display:
           id: field_ixp_case_target_id
           table: node__field_ixp_case
           field: field_ixp_case_target_id
-          relationship: field_ixp_case
+          relationship: none
           group_type: group
           admin_label: ''
           plugin_id: entity_target_id
@@ -208,13 +208,42 @@ display:
           id: status
           table: node_field_data
           field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: node
           entity_field: status
           plugin_id: boolean
-          value: '1'
+          operator: '='
+          value: All
           group: 1
+          exposed: false
           expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         type:
           id: type
           table: node_field_data

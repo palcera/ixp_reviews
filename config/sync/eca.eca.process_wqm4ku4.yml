@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.ixp_engagement
-    - views.view.duplicate_of_count_progress_reports
+    - views.view.count_final_reports
   module:
     - eca_base
     - eca_content
@@ -14,7 +14,7 @@ id: process_wqm4ku4
 modeller: bpmn_io
 label: 'Are enought final reports'
 version: v1.0
-weight: 0
+weight: -9
 events:
   Event_1mxe92v:
     plugin: 'content_entity:view'
@@ -24,7 +24,7 @@ events:
     successors:
       -
         id: Gateway_15oqpys
-        condition: Flow_0scc20h
+        condition: ''
 conditions:
   Flow_1kjsqdw:
     plugin: eca_entity_field_value
@@ -63,14 +63,6 @@ conditions:
       right: '2'
       operator: greaterthan
       type: value
-  Flow_0scc20h:
-    plugin: eca_content_form_display_mode
-    configuration:
-      negate: false
-      case: false
-      display_mode: default
-      operator: equal
-      type: value
 gateways:
   Gateway_0mcb69b:
     type: 0
@@ -95,7 +87,7 @@ actions:
     plugin: 'eca_render_views:views'
     label: 'read view count final reports'
     configuration:
-      view_id: duplicate_of_count_progress_reports
+      view_id: count_final_reports
       display_id: default
       arguments: ''
       name: ''
