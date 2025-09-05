@@ -1,22 +1,18 @@
-uuid: 36c4375f-f1c3-4aa0-98d0-7fb88dd7aa01
+uuid: 5f331cd7-f33b-47d5-94ef-838cedf3888e
 langcode: en
 status: true
 dependencies:
-  config:
-    - field.storage.group_relationship.group_roles
-    - field.storage.user.field_real_name
   module:
+    - gnode
     - group
-    - user
-_core:
-  default_config_hash: SqWsbxGWdQjy3VyI-AaO_5MYZ68_hXq87-XMmsJ38UA
-id: group_members
-label: 'Group members'
-module: group
-description: ''
+    - node
+id: group_nodes
+label: 'Group nodes'
+module: gnode
+description: 'Lists all of the nodes that have been added to a group.'
 tag: ''
-base_table: group_relationship_field_data
-base_field: id
+base_table: node_field_data
+base_field: nid
 display:
   default:
     id: default
@@ -24,17 +20,19 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Members
+      title: Nodes
       fields:
-        field_real_name:
-          id: field_real_name
-          table: user__field_real_name
-          field: field_real_name
-          relationship: gc__user
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
           plugin_id: field
-          label: 'Real Name'
+          label: Title
           exclude: false
           alter:
             alter_text: false
@@ -54,8 +52,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -89,80 +87,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        name:
-          id: name
-          table: users_field_data
-          field: name
-          relationship: gc__user
-          group_type: group
-          admin_label: ''
-          entity_type: user
-          entity_field: name
-          plugin_id: field
-          label: User
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: user_name
-          settings:
-            link_to_entity: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        group_roles:
-          id: group_roles
-          table: group_relationship__group_roles
-          field: group_roles
+        type:
+          id: type
+          table: node_field_data
+          field: type
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: type
           plugin_id: field
-          label: Roles
+          label: 'Content type'
           exclude: false
           alter:
             alter_text: false
@@ -199,7 +134,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: None
+          empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -214,20 +149,20 @@ display:
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: ul
+          multi_type: separator
           separator: ', '
           field_api_classes: false
-        changed:
-          id: changed
-          table: group_relationship_field_data
-          field: changed
+        status:
+          id: status
+          table: node_field_data
+          field: status
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: group_relationship
-          entity_field: changed
+          entity_type: node
+          entity_field: status
           plugin_id: field
-          label: Updated
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -269,11 +204,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: timestamp
+          type: boolean
           settings:
-            date_format: short
-            custom_date_format: ''
-            timezone: ''
+            format: custom
+            format_custom_false: Unpublished
+            format_custom_true: Published
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -284,17 +219,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        created:
-          id: created
-          table: group_relationship_field_data
-          field: created
+        changed:
+          id: changed
+          table: node_field_data
+          field: changed
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: group_relationship
-          entity_field: created
+          entity_type: node
+          entity_field: changed
           plugin_id: field
-          label: Joined
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -355,12 +290,12 @@ display:
           id: view_group_relationship
           table: group_relationship
           field: view_group_relationship
-          relationship: none
+          relationship: group_relationship
           group_type: group
-          admin_label: 'View member link'
+          admin_label: 'View relation link'
           entity_type: group_relationship
           plugin_id: entity_link
-          label: ''
+          label: 'Link to Group relationship'
           exclude: true
           alter:
             alter_text: false
@@ -393,7 +328,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -401,19 +336,19 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: 'View member'
+          text: 'View relation'
           output_url_as_text: false
           absolute: false
         edit_group_relationship:
           id: edit_group_relationship
           table: group_relationship
           field: edit_group_relationship
-          relationship: none
+          relationship: group_relationship
           group_type: group
-          admin_label: 'Edit member link'
+          admin_label: 'Edit relation link'
           entity_type: group_relationship
           plugin_id: entity_link_edit
-          label: ''
+          label: 'Link to edit Group relationship'
           exclude: true
           alter:
             alter_text: false
@@ -446,7 +381,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -454,17 +389,17 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: 'Edit member'
+          text: 'Edit relation'
         delete_group_relationship:
           id: delete_group_relationship
           table: group_relationship
           field: delete_group_relationship
-          relationship: none
+          relationship: group_relationship
           group_type: group
-          admin_label: 'Remove member link'
+          admin_label: 'Delete relation link'
           entity_type: group_relationship
           plugin_id: entity_link_delete
-          label: ''
+          label: 'Link to delete Group relationship'
           exclude: true
           alter:
             alter_text: false
@@ -497,7 +432,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -505,7 +440,109 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: 'Remove member'
+          text: 'Delete relation'
+        edit_node:
+          id: edit_node
+          table: node
+          field: edit_node
+          relationship: none
+          group_type: group
+          admin_label: 'Edit node link'
+          entity_type: node
+          plugin_id: entity_link_edit
+          label: 'Link to edit Content'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: 'Edit node'
+        delete_node:
+          id: delete_node
+          table: node
+          field: delete_node
+          relationship: none
+          group_type: group
+          admin_label: 'Delete node link'
+          entity_type: node
+          plugin_id: entity_link_delete
+          label: 'Link to delete Content'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: 'Delete node'
         dropbutton:
           id: dropbutton
           table: views
@@ -560,10 +597,12 @@ display:
             view_group_relationship: view_group_relationship
             edit_group_relationship: edit_group_relationship
             delete_group_relationship: delete_group_relationship
-            name: '0'
-            group_roles: '0'
+            edit_node: edit_node
+            delete_node: delete_node
+            title: '0'
+            type: '0'
+            status: '0'
             changed: '0'
-            created: '0'
       pager:
         type: full
         options:
@@ -598,7 +637,7 @@ display:
       access:
         type: group_permission
         options:
-          group_permission: 'view group_membership relationship'
+          group_permission: 'access group_node overview'
       cache:
         type: tag
         options: {  }
@@ -612,7 +651,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'No members available.'
+          content: 'No content available.'
           tokenize: false
       sorts: {  }
       arguments:
@@ -620,7 +659,7 @@ display:
           id: gid
           table: group_relationship_field_data
           field: gid
-          relationship: none
+          relationship: group_relationship
           group_type: group
           admin_label: ''
           entity_type: group_relationship
@@ -632,7 +671,7 @@ display:
             title_enable: false
             title: All
           title_enable: true
-          title: '{{ arguments.gid|placeholder }} members'
+          title: '{{ arguments.gid|placeholder }} nodes'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
@@ -652,7 +691,92 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-      filters: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Published status'
+            description: ''
+            use_operator: false
+            operator: status_op
+            identifier: status
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: true
+          group_info:
+            label: 'Published status'
+            description: ''
+            identifier: status
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Published
+                operator: '='
+                value: '1'
+              2:
+                title: Unpublished
+                operator: '='
+                value: '0'
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: Type
+            description: ''
+            use_operator: false
+            operator: type_op
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: table
         options:
@@ -660,38 +784,42 @@ display:
           row_class: ''
           default_row_class: true
           columns:
-            name: name
-            group_roles: group_roles
+            title: title
+            type: type
+            status: status
             changed: changed
-            created: created
             view_group_relationship: view_group_relationship
             edit_group_relationship: edit_group_relationship
             delete_group_relationship: delete_group_relationship
+            edit_node: edit_node
+            delete_node: delete_node
             dropbutton: dropbutton
-          default: '-1'
+          default: changed
           info:
-            name:
+            title:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            group_roles:
+            type:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            status:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
             changed:
               sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            created:
-              sortable: true
-              default_sort_order: asc
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false
@@ -711,6 +839,20 @@ display:
               empty_column: false
               responsive: ''
             delete_group_relationship:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            edit_node:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            delete_node:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -747,18 +889,17 @@ display:
           replica: false
           query_tags: {  }
       relationships:
-        gc__user:
-          id: gc__user
-          table: group_relationship_field_data
-          field: gc__user
+        group_relationship:
+          id: group_relationship
+          table: node_field_data
+          field: group_relationship
           relationship: none
           group_type: group
-          admin_label: 'Member account'
-          entity_type: group_relationship
-          plugin_id: group_relationship_to_entity
+          admin_label: 'Content relation'
+          entity_type: node
+          plugin_id: group_relationship_to_entity_reverse
           required: true
-          group_relation_plugins:
-            group_membership: group_membership
+          group_relation_plugins: {  }
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -771,40 +912,8 @@ display:
         - url
         - url.query_args
         - user.group_permissions
-      tags:
-        - 'config:field.storage.group_relationship.group_roles'
-        - 'config:field.storage.user.field_real_name'
-  entity_reference_1:
-    id: entity_reference_1
-    display_title: 'Entity Reference'
-    display_plugin: entity_reference
-    position: 2
-    display_options:
-      style:
-        type: entity_reference
-        options:
-          search_fields:
-            field_real_name: field_real_name
-            name: name
-            group_roles: '0'
-            changed: '0'
-            created: '0'
-            view_group_relationship: '0'
-            edit_group_relationship: '0'
-            delete_group_relationship: '0'
-            dropbutton: '0'
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - route.group
-        - url
-        - user.group_permissions
-      tags:
-        - 'config:field.storage.group_relationship.group_roles'
-        - 'config:field.storage.user.field_real_name'
+        - 'user.node_grants:view'
+      tags: {  }
   page_1:
     id: page_1
     display_title: Page
@@ -812,12 +921,12 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: group/%group/members
+      path: group/%group/nodes
       menu:
         type: tab
-        title: Members
+        title: Nodes
         description: ''
-        weight: 20
+        weight: 25
         enabled: true
         expanded: false
         menu_name: main
@@ -832,6 +941,5 @@ display:
         - url
         - url.query_args
         - user.group_permissions
-      tags:
-        - 'config:field.storage.group_relationship.group_roles'
-        - 'config:field.storage.user.field_real_name'
+        - 'user.node_grants:view'
+      tags: {  }
