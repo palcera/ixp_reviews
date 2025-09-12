@@ -48,6 +48,13 @@ jobs:
           [ -d deploy/web/themes/custom ] && rm -rf deploy/web/themes/custom
           cp -r web/themes/custom deploy/web/themes
 
+      # Copy drush folder
+      - name: Copy drush folder
+        run: |
+          echo "Copying drush folder..."
+          [ -d deploy/drush ] && rm -rf deploy/drush
+          cp -r drush deploy/drush
+
       # Compile the theme
       - name: Compiling Artisan themes/custom/ixp_artisan
         run: |
