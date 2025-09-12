@@ -1,0 +1,9 @@
+prod:
+  uri: 'https://www.drupal-ixp.site'
+  host: 'ec2-34-199-51-216.compute-1.amazonaws.com'
+  user: 'carlos'
+  root: '/var/www/drupal-ixp.site'
+  paths:
+    drush-script: './vendor/bin/drush'
+  ssh:
+    options: '-o PasswordAuthentication=no'
