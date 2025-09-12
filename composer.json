@@ -64,6 +64,7 @@
         "drupal/link_attributes": "^2.1",
         "drupal/linkit": "^7.0@alpha",
         "drupal/login_redirect_per_role": "^1.10",
+        "drupal/mailgun": "^2.1",
         "drupal/mailsystem": "^4.5",
         "drupal/manage_display": "3.x-dev@dev",
         "drupal/markdown_easy": "^1.0",
