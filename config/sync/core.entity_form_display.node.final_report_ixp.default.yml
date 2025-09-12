@@ -53,6 +53,21 @@ content:
       label: true
       wrapper: div
       open: true
+      fields:
+        value:
+          weight: 0
+          type: url
+          label: Value
+          size: 60
+          placeholder: ''
+        link_description:
+          weight: 0
+          type: text
+          label: 'Link description'
+          size: 100
+          placeholder: ''
+          maxlength: 255
+          maxlength_js: false
     third_party_settings: {  }
   field_mentor_available:
     type: boolean_checkbox
