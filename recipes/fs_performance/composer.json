@@ -1,0 +1,13 @@
+{
+    "name": "flexsite/fs_performance",
+    "description": "Adds advanced performance optimization tools including Varnish cache management, Redis integration, and comprehensive purge capabilities.",
+    "type": "drupal-recipe",
+    "license": ["GPL-2.0-or-later"],
+    "require": {
+        "drupal/purge": "^3.6",
+        "drupal/varnish_purge": "^2.3",
+        "drupal/redis": "^1.9",
+        "drupal/ultimate_cron": "^2.0@beta"
+    },
+    "version": "1.0.13"
+} 

@@ -27,6 +27,12 @@ type_settings:
       published: true
       default_revision: true
   transitions:
+    assign:
+      label: Assign
+      from:
+        - coupon_requested
+      to: published
+      weight: 3
     create_new_draft:
       label: 'Create New Draft'
       from:

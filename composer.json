@@ -16,6 +16,10 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.flexsite.io/packages.json"
         }
     ],
     "require": {
@@ -75,9 +79,11 @@
         "drupal/pathauto": "^1.11",
         "drupal/phpmailer_smtp": "^2.2",
         "drupal/profile": "^1.11",
+        "drupal/purge": "^3.6",
         "drupal/radix": "~6",
         "drupal/redirect": "^1.9",
         "drupal/redirect_404": "^1.9",
+        "drupal/redis": "^1.11",
         "drupal/robotstxt": "^1.6",
         "drupal/schema_metatag": "^3.0",
         "drupal/search404": "^2.2@RC",
@@ -93,7 +99,9 @@
         "drupal/symfony_mailer_lite": "^2.0",
         "drupal/upgrade_status": "^4.3",
         "drupal/user_current_paths": "^2.0",
+        "drupal/varnish_purge": "^2.3",
         "drush/drush": "^13",
+        "flexsite/fs_performance": "^1.0",
         "mglaman/composer-drupal-lenient": "^1.0",
         "oomphinc/composer-installers-extender": "^2.0"
     },

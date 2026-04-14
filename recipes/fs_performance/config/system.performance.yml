@@ -1,0 +1,10 @@
+cache:
+  page:
+    max_age: 31536000
+css:
+  preprocess: true
+  gzip: true
+js:
+  preprocess: true
+  gzip: true
+stale_file_threshold: 2592000 

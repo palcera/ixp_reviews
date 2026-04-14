@@ -1,0 +1,89 @@
+name: Flexsite Performance
+type: Flexsite
+description: Adds advanced performance optimization tools including Varnish cache management, Redis integration, and comprehensive purge capabilities with 1-year max-age settings.
+install:
+  - purge
+  - varnish_purger
+  - varnish_purge_tags
+  - redis
+  - purge_ui
+  - purge_drush
+  - purge_processor_cron
+  - purge_processor_lateruntime
+  - purge_queuer_coretags
+  - purge_tokens
+  - ultimate_cron
+config:
+  strict: false
+  import:
+    purge: '*'
+    redis: '*'
+    ultimate_cron: '*'
+  actions:
+    # Set maximum page cache age to 1 year (31536000 seconds)
+    system.performance:
+      simpleConfigUpdate:
+        cache.page.max_age: 31536000
+        css.preprocess: true
+        js.preprocess: true
+
+    # Configure Ultimate Cron scheduler for all jobs
+    ultimate_cron.settings:
+      simpleConfigUpdate:
+        scheduler:
+          simple:
+            rule: '0+@ */3 * * *'
+
+    # Configure the purge processor cron job to run every minute
+    ultimate_cron.job.purge_processor_cron_cron:
+      simpleConfigUpdate:
+        scheduler:
+          id: simple
+          configuration:
+            rules:
+              - '0+@ * * * *'
+
+    ultimate_cron.job.field_cron:
+      simpleConfigUpdate:
+        scheduler:
+          id: simple
+          configuration:
+            rules:
+              - '0+@ */6 * * *'
+
+    ultimate_cron.job.file_cron:
+      simpleConfigUpdate:
+        scheduler:
+          id: simple
+          configuration:
+            rules:
+              - '0+@ */6 * * *'
+
+    ultimate_cron.job.node_cron:
+      simpleConfigUpdate:
+        scheduler:
+          id: simple
+          configuration:
+            rules:
+              - '0+@ */3 * * *'
+
+    ultimate_cron.job.system_cron:
+      simpleConfigUpdate:
+        scheduler:
+          id: simple
+          configuration:
+            rules:
+              - '0+@ */3 * * *'
+
+    ultimate_cron.job.ultimate_cron_cron:
+      simpleConfigUpdate:
+        scheduler:
+          id: simple
+          configuration:
+            rules:
+              - '0+@ */3 * * *'
+
+    # Note: We only configure cron jobs for modules guaranteed to be installed
+    # strict: false only affects imports, NOT simpleConfigUpdate actions
+    # Trying to update a non-existent config throws an exception and rolls back all changes
+

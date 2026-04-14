@@ -57,8 +57,11 @@ content:
     weight: 7
     region: content
     settings:
-      label: true
       wrapper: div
+      label_value: ''
+      label_limit: 60
+      label_prefix: Item
+      auto_collapse: false
       open: true
       fields:
         value:
