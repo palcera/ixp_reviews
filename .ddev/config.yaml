@@ -17,6 +17,9 @@ web_environment:
     - REDIS_PORT=6379
     - ENVIRONMENT=local
 corepack_enable: true
+hooks:
+  post-start:
+    - exec: npm install -g @flexsiteio/cli
 
 # Key features of DDEV's config.yaml:
 

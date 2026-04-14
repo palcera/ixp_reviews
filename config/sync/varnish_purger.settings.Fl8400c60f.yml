@@ -1,0 +1,27 @@
+uuid: 9775950c-2c43-479c-ad12-74af4e5ae0f6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: PKY1zX_F_Lm7TPuVs1tx-S8zfHvO3P08c0CMCNy9iB0
+id: Fl8400c60f
+name: 'Main varnish layer'
+invalidationtype: tag
+hostname: localhost
+port: 80
+path: /
+request_method: BAN
+scheme: http
+verify: '0'
+headers:
+  -
+    field: Cache-Tags
+    value: '[invalidation:expression]'
+body: null
+body_content_type: null
+runtime_measurement: true
+timeout: 1.0
+connect_timeout: 1.0
+cooldown_time: 0.0
+max_requests: 100
+http_errors: true

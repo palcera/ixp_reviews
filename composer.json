@@ -91,7 +91,6 @@
         "drupal/security_review": "^3",
         "drupal/seo_checklist": "^5.2",
         "drupal/simple_sitemap": "^4.1",
-        "drupal/single_content_sync": "^1.4",
         "drupal/sitemap": "^2.0",
         "drupal/smart_date": "^4.2",
         "drupal/stage_file_proxy": "^3.1",
@@ -176,7 +175,7 @@
         },
         "patches": {
 	    "drupal/core": {
-		 "Fix Ajax error on Views with aggregation (Issue #3344910)": "https://git.drupalcode.org/project/drupal/-/merge_requests/10181.patch"
+		 "Fix Ajax error on Views with aggregation (Issue #3344910)": "https://www.drupal.org/files/issues/2025-12-18/aggregation_in_views-3344910-35.patch"
 	    }
 	},
         "drupal-lenient": {

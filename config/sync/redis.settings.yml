@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: ZtDONsIQsz6yIp42a65k0vpKusLHC6-0xo98WZ_S8Y8
+redis_compress_length: 100
+redis_compress_level: 1
+connection:
+  interface: PhpRedis
+  host: 127.0.0.1
+  port: 6379
+  base: 0
+  persistent: true
+  password: null
+  timeout: null
