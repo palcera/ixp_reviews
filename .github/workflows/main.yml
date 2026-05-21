@@ -60,7 +60,7 @@ jobs:
         run: |
           echo "Compiling Artisan themes/custom/ixp_radix..."
           cd deploy/web/themes/custom/ixp_radix
-          npm install
+          npm ci
           npm run production
           cd ../../../../..
 

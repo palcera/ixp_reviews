@@ -24,6 +24,9 @@
 /web/themes/custom/*/package-lock.json
 /web/themes/custom/*/build
 
+# Keep ixp_radix lockfile tracked for reproducible CI theme builds
+!/web/themes/custom/ixp_radix/package-lock.json
+
 # Ignore paths that may contain temporary files
 /web/sites/*/translations
 /web/sites/*/tmp
