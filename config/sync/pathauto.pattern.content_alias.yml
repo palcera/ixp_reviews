@@ -2,17 +2,20 @@ uuid: 9f11f335-6b0d-467d-8fa5-9bd59fc3a5f2
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.final_report_ixp
+    - node.type.ixp_engagement
+    - node.type.progress_report
   module:
     - node
 id: content_alias
 label: 'Content alias'
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: '/[node:title]'
 selection_criteria:
   8a0e2d04-e373-4639-8b80-2c451d438dbb:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 8a0e2d04-e373-4639-8b80-2c451d438dbb
     context_mapping:
       node: node
     bundles:
