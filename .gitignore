@@ -164,3 +164,9 @@ oauth_keys/
 
 # env-file
 /.env*
+
+# Claude Code tooling artifacts
+/.claude/
+/.claude-telemetry/
+/.design-intelligence/
+/.design-intelligence-audit/
