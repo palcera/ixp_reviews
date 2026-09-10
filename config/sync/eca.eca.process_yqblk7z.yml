@@ -73,6 +73,7 @@ actions:
       -
         id: Activity_00yvn2j
         condition: ''
+    original_id: math
   Activity_00yvn2j:
     plugin: 'eca_tamper:str_pad'
     label: 'Create Full case number'
@@ -86,6 +87,7 @@ actions:
       -
         id: Gateway_1vdkhw2
         condition: ''
+    original_id: str_pad
   Activity_1s7lvlv:
     plugin: eca_set_field_value
     label: 'Set Case number'

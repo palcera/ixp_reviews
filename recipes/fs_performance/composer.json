@@ -9,5 +9,5 @@
         "drupal/redis": "^1.9",
         "drupal/ultimate_cron": "^2.0@beta"
     },
-    "version": "1.0.13"
+    "version": "1.0.14"
 } 

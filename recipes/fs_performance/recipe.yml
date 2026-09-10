@@ -43,14 +43,6 @@ config:
             rules:
               - '0+@ * * * *'
 
-    ultimate_cron.job.field_cron:
-      simpleConfigUpdate:
-        scheduler:
-          id: simple
-          configuration:
-            rules:
-              - '0+@ */6 * * *'
-
     ultimate_cron.job.file_cron:
       simpleConfigUpdate:
         scheduler:
@@ -58,14 +50,6 @@ config:
           configuration:
             rules:
               - '0+@ */6 * * *'
-
-    ultimate_cron.job.node_cron:
-      simpleConfigUpdate:
-        scheduler:
-          id: simple
-          configuration:
-            rules:
-              - '0+@ */3 * * *'
 
     ultimate_cron.job.system_cron:
       simpleConfigUpdate:
@@ -86,4 +70,10 @@ config:
     # Note: We only configure cron jobs for modules guaranteed to be installed
     # strict: false only affects imports, NOT simpleConfigUpdate actions
     # Trying to update a non-existent config throws an exception and rolls back all changes
+    #
+    # Ultimate Cron creates one ultimate_cron.job.{module}_cron entity per module
+    # implementing hook_cron, so a core module dropping that hook removes the job.
+    # field_cron went away in core 11.4 (field purge moved to the FieldPurger
+    # service, https://www.drupal.org/node/3494023) and node_cron went with the
+    # removal of node's NodeSearchHooks, so neither is configured here anymore.
 

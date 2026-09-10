@@ -109,6 +109,7 @@ actions:
       -
         id: Activity_1988u8n
         condition: ''
+    original_id: strip_tags
   Activity_1988u8n:
     plugin: 'eca_tamper:trim'
     label: 'Strip all'
@@ -121,6 +122,7 @@ actions:
       -
         id: Activity_1s8lsr5
         condition: ''
+    original_id: trim
   Activity_1s8lsr5:
     plugin: 'eca_tamper:cast_to_int'
     label: 'cast to integer'
@@ -131,6 +133,7 @@ actions:
       -
         id: Gateway_0mcb69b
         condition: ''
+    original_id: cast_to_int
   Activity_1qeqexi:
     plugin: action_message_action
     label: Enough

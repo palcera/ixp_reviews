@@ -867,6 +867,23 @@ if (file_exists($app_root . '/' . $site_path . '/settings.deploy.php')) {
   include $app_root . '/' . $site_path . '/settings.deploy.php';
 }
 
+// Reverse proxy: Drupal runs behind FlexSite's K8s ingress in prod and behind
+// ddev-router locally. Both terminate TLS and forward as HTTP, so without
+// this block Drupal sees the request as HTTP and does not trust
+// X-Forwarded-Proto / X-Forwarded-Host, which breaks the Secure/SameSite
+// session cookie and produces logged-out redirects after login.
+// The pod's immediate peer is always the proxy, so REMOTE_ADDR is the correct
+// trusted proxy address in both environments.
+if (PHP_SAPI !== 'cli' && !empty($_SERVER['REMOTE_ADDR'])) {
+  $settings['reverse_proxy'] = TRUE;
+  $settings['reverse_proxy_addresses'] = [$_SERVER['REMOTE_ADDR']];
+  $settings['reverse_proxy_trusted_headers'] =
+    \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_FOR
+    | \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_HOST
+    | \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PORT
+    | \Symfony\Component\HttpFoundation\Request::HEADER_X_FORWARDED_PROTO;
+}
+
 
 /**
  * Load local development override configuration, if available.

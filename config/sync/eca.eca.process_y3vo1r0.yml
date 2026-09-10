@@ -181,6 +181,7 @@ actions:
       -
         id: Activity_0vil4m1
         condition: ''
+    original_id: strip_tags
   Activity_0vil4m1:
     plugin: 'eca_tamper:trim'
     label: 'Strip the rest'
@@ -193,6 +194,7 @@ actions:
       -
         id: Activity_0pw5sy0
         condition: ''
+    original_id: trim
   Activity_121dl0o:
     plugin: 'eca_tamper:strtotime'
     label: 'convert end date to timestamp'
@@ -203,6 +205,7 @@ actions:
       -
         id: Gateway_0txcrbu
         condition: ''
+    original_id: strtotime
   Activity_0pzzub0:
     plugin: eca_get_field_value
     label: 'Get Start Date'
@@ -235,6 +238,7 @@ actions:
       -
         id: Activity_1j4pfjs
         condition: ''
+    original_id: strtotime
   Activity_1j4pfjs:
     plugin: 'eca_tamper:math'
     label: 'Difference between dates'
@@ -249,6 +253,7 @@ actions:
       -
         id: Activity_0ba0e8s
         condition: ''
+    original_id: math
   Activity_0ba0e8s:
     plugin: 'eca_tamper:math'
     label: 'Time in weeks'
@@ -263,6 +268,7 @@ actions:
       -
         id: Activity_1doy9nd
         condition: ''
+    original_id: math
   Activity_1doy9nd:
     plugin: 'eca_tamper:cast_to_int'
     label: 'Time in bi-weeks(integer)'
@@ -273,6 +279,7 @@ actions:
       -
         id: Activity_034rjha
         condition: ''
+    original_id: cast_to_int
   Activity_034rjha:
     plugin: 'eca_tamper:math'
     label: 'Reports needed'
@@ -287,6 +294,7 @@ actions:
       -
         id: Gateway_02lh2uy
         condition: ''
+    original_id: math
   Activity_0b3ilqp:
     plugin: action_message_action
     label: 'Enough reports message'
@@ -315,3 +323,4 @@ actions:
       -
         id: Gateway_0bv6177
         condition: ''
+    original_id: cast_to_int
